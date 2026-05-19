@@ -1383,6 +1383,118 @@ h3 + p {
   padding-top: clamp(4rem, 6vw, 6rem);
 }
 
+.simple-donate {
+  padding: 92px 20px 96px;
+}
+
+.simple-donate-inner {
+  width: min(860px, 100%);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.simple-donate .section-heading {
+  width: min(520px, 100%);
+  margin: 0 auto;
+}
+
+.simple-donate .section-heading h2 {
+  margin: 0;
+  color: #202231;
+  font-family: var(--font-heading);
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.simple-donate .section-heading p {
+  width: auto;
+  margin: 36px auto 0;
+  color: #3e4147;
+  font-family: var(--font-body);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.24;
+}
+
+.simple-donate-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 44px;
+  width: min(690px, 100%);
+  margin: 52px auto 0;
+}
+
+.simple-donate-button {
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr);
+  align-items: center;
+  min-height: 58px;
+  border: 2px solid #2e3d50;
+  border-radius: 999px;
+  padding: 7px 24px 7px 10px;
+  color: #2e3d50;
+  font-family: var(--font-body);
+  text-decoration: none;
+  transition: transform 180ms ease, filter 180ms ease, background 180ms ease;
+}
+
+.simple-donate-button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.04);
+}
+
+.simple-donate-button-dark {
+  border-color: #2e3d50;
+  background: #2e3d50;
+  color: #fff;
+}
+
+.simple-donate-button-light {
+  background: transparent;
+}
+
+.simple-donate-icon {
+  display: inline-flex;
+  width: 38px;
+  height: 38px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #d5b081;
+}
+
+.simple-donate-button-light .simple-donate-icon {
+  background: #2e3d50;
+}
+
+.simple-donate-icon img {
+  width: 21px;
+  height: 21px;
+  object-fit: contain;
+}
+
+.simple-donate-copy {
+  display: grid;
+  justify-items: center;
+  gap: 1px;
+  line-height: 1;
+}
+
+.simple-donate-copy strong {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 0.95;
+}
+
+.simple-donate-copy small {
+  font-family: var(--font-body);
+  font-size: 8px;
+  font-weight: 700;
+  line-height: 1;
+}
+
 .join .section-heading {
   width: min(1120px, 100%);
   margin-bottom: 2rem;
@@ -3453,3 +3565,168 @@ details:not([open]) summary::after {
     content: none !important;
   }
 }
+
+@media (max-width: 720px) {
+  .simple-donate {
+    padding: 48px 22px 56px !important;
+    background: #f9f8f2;
+  }
+
+  .simple-donate-inner {
+    width: min(260px, 100%);
+  }
+
+  .simple-donate .section-heading {
+    width: 100%;
+  }
+
+  .simple-donate .section-heading h2 {
+    max-width: 220px;
+    margin: 0 auto;
+    font-size: 31px !important;
+    line-height: 0.98;
+    text-align: center;
+  }
+
+  .simple-donate .section-heading p {
+    margin-top: 24px !important;
+    font-size: 16px !important;
+    line-height: 1.17 !important;
+  }
+
+  .simple-donate-actions {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    width: 100% !important;
+    margin-top: 30px !important;
+  }
+
+  .simple-donate-button {
+    min-height: 38px !important;
+    grid-template-columns: 34px minmax(0, 1fr) !important;
+    padding: 5px 16px 5px 6px !important;
+    border-width: 1.5px !important;
+  }
+
+  .simple-donate-icon {
+    width: 28px !important;
+    height: 28px !important;
+  }
+
+  .simple-donate-icon img {
+    width: 16px !important;
+    height: 16px !important;
+  }
+
+  .simple-donate-copy strong {
+    font-size: 16px !important;
+  }
+
+  .simple-donate-copy small {
+    font-size: 6px !important;
+  }
+
+  #about.about {
+    padding: 56px 24px 74px !important;
+  }
+
+  #about .section-heading {
+    margin-bottom: 30px !important;
+    text-align: center !important;
+  }
+
+  html:lang(en) #about .section-heading p,
+  html:lang(ru) #about .section-heading p,
+  html:lang(en) #about .about-grid h3,
+  html:lang(ru) #about .about-grid h3,
+  html:lang(en) #about .about-grid article p,
+  html:lang(ru) #about .about-grid article p {
+    font-size: 0 !important;
+    line-height: 0 !important;
+  }
+
+  html:lang(en) #about .section-heading p::before {
+    content: "Belarus you can actually visit";
+  }
+
+  html:lang(ru) #about .section-heading p::before {
+    content: "????????, ? ??????? ????? ????????";
+  }
+
+  html:lang(en) #about .about-item:nth-child(1) h3::before { content: "Eco-glamping"; }
+  html:lang(en) #about .about-item:nth-child(1) p::before { content: "Tents, summer cabins, a fire pit and simple amenities"; }
+  html:lang(en) #about .about-item:nth-child(2) h3::before { content: "Reviving the homestead"; }
+  html:lang(en) #about .about-item:nth-child(2) p::before { content: "You can come, help with your hands, and become part of this place's revival"; }
+  html:lang(en) #about .about-item:nth-child(3) h3::before { content: "No one around"; }
+  html:lang(en) #about .about-item:nth-child(3) p::before { content: "The homestead is surrounded by forest on all four sides - birch, pine, and oak"; }
+  html:lang(en) #about .about-item:nth-child(4) h3::before { content: "Belarusian culture"; }
+  html:lang(en) #about .about-item:nth-child(4) p::before { content: "Food, language, songs, and traditions as part of a living village"; }
+
+  html:lang(ru) #about .about-item:nth-child(1) h3::before { content: "???-????????"; }
+  html:lang(ru) #about .about-item:nth-child(1) p::before { content: "???????, ?????? ??????, ?????? ? ??????? ????????"; }
+  html:lang(ru) #about .about-item:nth-child(2) h3::before { content: "?????????????? ??????"; }
+  html:lang(ru) #about .about-item:nth-child(2) p::before { content: "????? ????????, ?????? ?????? ? ????? ?????? ??????????? ?????"; }
+  html:lang(ru) #about .about-item:nth-child(3) h3::before { content: "?????? ?? ????"; }
+  html:lang(ru) #about .about-item:nth-child(3) p::before { content: "????? ??????? ????? ? 4-? ?????? - ?????????, ???????? ? ???????"; }
+  html:lang(ru) #about .about-item:nth-child(4) h3::before { content: "??????????? ????????"; }
+  html:lang(ru) #about .about-item:nth-child(4) p::before { content: "???, ????, ????? ? ???????? ??? ????? ????? ???????"; }
+
+  #about .section-heading p::before,
+  #about .about-grid h3::before,
+  #about .about-grid article p::before {
+    display: block !important;
+  }
+
+  #about .section-heading p::before {
+    font-family: var(--font-body);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.18;
+  }
+
+  #about .about-grid h3::before {
+    font-family: var(--font-heading);
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 0.95;
+    color: #202231;
+  }
+
+  #about .about-grid article p::before {
+    margin-top: 6px;
+    font-family: var(--font-body);
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.08;
+    color: #202231;
+  }
+
+  #about .about-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  #about .about-item,
+  #about .about-item-left,
+  #about .about-item-right {
+    display: grid !important;
+    grid-template-columns: 118px minmax(0, 1fr) !important;
+    align-items: start !important;
+    gap: 16px !important;
+    text-align: left !important;
+  }
+
+  #about .about-image {
+    width: 118px !important;
+    height: 118px !important;
+    border-radius: 8px !important;
+    object-fit: cover !important;
+  }
+
+  #about .about-item:nth-child(1) .about-image { content: url("assets/mroja-about-glamping.jpg"); }
+  #about .about-item:nth-child(2) .about-image { content: url("assets/mroja-about-restoration.jpg"); }
+  #about .about-item:nth-child(3) .about-image { content: url("assets/mroja-about-forest.jpg"); }
+  #about .about-item:nth-child(4) .about-image { content: url("assets/mroja-about-culture.jpg"); }
+}
+
