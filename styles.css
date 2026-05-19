@@ -259,6 +259,20 @@ h3 + p {
   transform: translateY(-1px);
 }
 
+.language-switch {
+  color: #202231;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  text-decoration: none;
+  transition: opacity 160ms ease;
+}
+
+.language-switch:hover {
+  opacity: 0.68;
+}
+
 .mobile-header-button,
 .mobile-contact-link,
 .mobile-social-links,
