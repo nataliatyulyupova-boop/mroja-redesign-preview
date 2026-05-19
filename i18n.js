@@ -73,7 +73,7 @@
       ".share-button span": "Tell friends",
     },
     html: {
-      "#hero-title": "Reviving an abandoned homestead in the<br>forest",
+      "#hero-title": "Reviving an abandoned<br>homestead in the forest",
       ".about .section-heading p": "In the forest of Podlasie, Poland, 6 km from the Belarusian border, we bought an abandoned homestead with a 100-year-old house. We will not demolish it — we want to preserve the character of this place and make the old house the heart of a future eco-village",
       ".about-item:nth-child(1) p .copy-desktop": "Taking part in the restoration of a century-old house under the guidance of craftspeople. The house will become a center for meetings, conversations, and encounters with Belarusian culture and traditions",
       ".about-item:nth-child(1) p .copy-mobile": "Taking part in the restoration of a century-old house under the guidance of craftspeople",

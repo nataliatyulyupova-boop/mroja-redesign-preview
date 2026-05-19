@@ -485,8 +485,42 @@ function initShare() {
   });
 }
 
+function initAudienceSlider() {
+  const slider = document.querySelector("[data-audience-slider]");
+  if (!slider) return;
+
+  const track = slider.querySelector("[data-audience-track]");
+  const cards = Array.from(slider.querySelectorAll(".audience-card"));
+  const prev = slider.querySelector("[data-audience-prev]");
+  const next = slider.querySelector("[data-audience-next]");
+  if (!track || cards.length < 2 || !prev || !next) return;
+
+  let active = 0;
+
+  function render() {
+    track.style.transform = `translateX(${-active * 100}%)`;
+  }
+
+  function go(direction) {
+    active = (active + direction + cards.length) % cards.length;
+    render();
+  }
+
+  prev.addEventListener("click", () => go(-1));
+  next.addEventListener("click", () => go(1));
+
+  window.addEventListener("resize", render);
+  render();
+
+  if (window.matchMedia("(max-width: 720px)").matches) {
+    slider.classList.add("is-hinting");
+    window.setTimeout(() => slider.classList.remove("is-hinting"), 1300);
+  }
+}
+
 initTabs();
 initCarousel();
+initAudienceSlider();
 // initShare intentionally stays inactive on mobile-first launch to avoid Safari privacy prompts.
 initBackToTop();
 initMobileMenu();
