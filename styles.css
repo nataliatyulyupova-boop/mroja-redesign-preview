@@ -3859,3 +3859,261 @@ details:not([open]) summary::after {
     transform: scale(1.14);
   }
 }
+
+/* Targeted redesign additions: mission section and CTA refinements */
+.header-button,
+.mobile-header-button {
+  background: #c8a787;
+  color: #1f2028;
+}
+
+.header-button:hover,
+.mobile-header-button:hover {
+  background: #b99777;
+}
+
+@media (min-width: 721px) {
+  .hero-actions .button-gold {
+    position: relative;
+    width: 340px;
+    min-height: 64px;
+    padding: 0 76px;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 999px;
+    background:
+      radial-gradient(circle 25px at 32px 50%, #e3b64b 0 25px, transparent 26px),
+      linear-gradient(110deg, rgba(255, 255, 255, 0.32), rgba(255, 255, 255, 0.06) 45%, rgba(255, 255, 255, 0.16)),
+      rgba(56, 50, 44, 0.72);
+    color: #fff;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.24),
+      0 18px 44px rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .hero-actions .button-gold::before {
+    content: "";
+    position: absolute;
+    inset: auto;
+    left: 7px;
+    top: 50%;
+    z-index: 1;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: block !important;
+    background-color: #e3b64b !important;
+    background-image: url("assets/button-icon-leaves.png") !important;
+    background-position: center !important;
+    background-size: 30px 30px !important;
+    background-repeat: no-repeat !important;
+    transform: translateY(-50%);
+  }
+
+  .hero-actions .button-gold::after {
+    content: "";
+    position: absolute;
+    inset: auto;
+    right: 22px;
+    top: 50%;
+    z-index: 1;
+    width: 42px;
+    height: 30px;
+    background: url("assets/button-icon-arrows.png") center / contain no-repeat;
+    opacity: 0.72;
+    transform: translateY(-50%);
+  }
+
+  .hero-actions .button-gold span {
+    z-index: 2;
+  }
+}
+
+.mission-section {
+  position: relative;
+  overflow: hidden;
+  background: #f8f8f0;
+  padding: clamp(58px, 6vw, 84px) 0 0;
+}
+
+.mission-section-inner {
+  position: relative;
+  z-index: 2;
+  width: min(920px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.mission-section-heading {
+  margin: 0 auto 26px;
+}
+
+.mission-card {
+  position: relative;
+  z-index: 2;
+  width: min(720px, 100%);
+  margin: 0 auto;
+  padding: 34px 48px 30px;
+  border-radius: 18px;
+  background:
+    linear-gradient(rgba(248, 248, 240, 0.24), rgba(248, 248, 240, 0.24)),
+    url("assets/stage-bg.jpg") center / cover;
+}
+
+.mission-card-lead {
+  max-width: 620px;
+  margin: 0 auto 24px;
+  text-align: center;
+}
+
+.mission-points {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 36px;
+  text-align: center;
+}
+
+.mission-points article {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+}
+
+.mission-points img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+}
+
+.mission-points h3 {
+  max-width: 170px;
+  margin: 0 auto;
+  font-size: inherit;
+  line-height: 1.05;
+}
+
+.mission-visual {
+  position: relative;
+  min-height: clamp(330px, 36vw, 500px);
+  margin-top: 22px;
+  background:
+    linear-gradient(to bottom, #f8f8f0 0%, rgba(248, 248, 240, 0.98) 12%, rgba(248, 248, 240, 0.74) 24%, rgba(248, 248, 240, 0.18) 42%, rgba(248, 248, 240, 0) 56%),
+    url("assets/mroja-mission-bg-dekstop.JPG") center bottom / cover no-repeat;
+}
+
+.mission-visual::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 42%;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  mask-image: linear-gradient(to bottom, #000 0%, transparent 100%);
+  pointer-events: none;
+}
+
+.mission-accent {
+  position: relative;
+  z-index: 2;
+  width: min(620px, calc(100% - 40px));
+  margin: 0 auto;
+  padding-top: clamp(22px, 3.4vw, 46px);
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: clamp(28px, 3.1vw, 42px);
+  line-height: 1.12;
+  color: #33343b;
+  text-shadow: 0 1px 16px rgba(248, 248, 240, 0.75);
+}
+
+.mission-section-ornament {
+  position: absolute;
+  z-index: 1;
+  top: 12px;
+  right: max(-120px, calc((100vw - 1180px) / 2 - 95px));
+  width: 300px;
+  height: auto;
+  opacity: 0.14;
+  pointer-events: none;
+}
+
+@media (max-width: 720px) {
+  .about-section-inner {
+    width: min(332px, 100%) !important;
+  }
+
+  .mission-section {
+    padding-top: 52px;
+  }
+
+  .mission-section-inner {
+    width: min(326px, calc(100% - 48px));
+  }
+
+  .mission-section-heading {
+    margin-bottom: 22px;
+  }
+
+  .mission-card {
+    width: 100%;
+    padding: 28px 26px 26px;
+    border-radius: 22px;
+  }
+
+  .mission-card-lead {
+    margin-bottom: 22px;
+    text-align: center;
+  }
+
+  .mission-points {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    text-align: left;
+  }
+
+  .mission-points article {
+    grid-template-columns: 44px minmax(0, 1fr);
+    align-items: center;
+    justify-items: start;
+    gap: 10px;
+  }
+
+  .mission-points img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .mission-points h3 {
+    max-width: 190px;
+    margin: 0;
+  }
+
+  .mission-visual {
+    min-height: 360px;
+    margin-top: -18px;
+    border-radius: 0 0 18px 18px;
+    background:
+      linear-gradient(to bottom, #f8f8f0 0%, rgba(248, 248, 240, 0.82) 15%, rgba(248, 248, 240, 0.18) 36%, rgba(248, 248, 240, 0) 52%),
+      url("assets/mroja-mission-bg-mobile.JPG") center bottom / cover no-repeat;
+  }
+
+  .mission-visual::before {
+    height: 46%;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+
+  .mission-accent {
+    width: min(286px, calc(100% - 44px));
+    padding-top: 72px;
+    font-size: 24px;
+    line-height: 1.15;
+  }
+
+  .mission-section-ornament {
+    top: -26px;
+    right: -92px;
+    width: 180px;
+    opacity: 0.14;
+  }
+}
