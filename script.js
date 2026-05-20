@@ -176,8 +176,8 @@ function initCarousel() {
       const diff = relative(cardIndex, normalized);
       const abs = Math.abs(diff);
       const isMobile = window.matchMedia("(max-width: 720px)").matches;
-      const mobileCardWidth = Math.min(244, Math.max(220, window.innerWidth * 0.58));
-      const mobileStep = mobileCardWidth + 16;
+      const mobileCardWidth = Math.min(330, Math.max(270, window.innerWidth * 0.78));
+      const mobileStep = mobileCardWidth + 20;
       const mobileStart = -(stage.clientWidth / 2 - 28 - mobileCardWidth / 2);
       const scale = isMobile ? Math.max(0.76, 1 - abs * 0.12) : Math.max(0.46, 1 - abs * 0.11);
       const opacity = isMobile ? (abs > 1.35 ? 0 : Math.max(0.56, 1 - abs * 0.3)) : (abs > 4.2 ? 0 : Math.max(0.1, 1 - abs * 0.22));
