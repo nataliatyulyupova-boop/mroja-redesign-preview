@@ -1,6 +1,16 @@
 (function () {
   const isRussian = /\/ru\/?$/.test(window.location.pathname) || /\/ru\//.test(window.location.pathname);
   const lang = isRussian ? "ru" : "en";
+  const isPreviewHost =
+    /github\.io$/i.test(window.location.hostname) ||
+    /^(localhost|127\.0\.0\.1)$/i.test(window.location.hostname);
+  const browserPrefersRussian = /^ru\b/i.test(navigator.language || "");
+
+  if (!isRussian && !isPreviewHost && browserPrefersRussian && !sessionStorage.getItem("mroja-lang-choice")) {
+    sessionStorage.setItem("mroja-lang-choice", "auto-ru");
+    window.location.replace("ru/");
+    return;
+  }
 
   const en = {
     htmlLang: "en",
@@ -25,7 +35,7 @@
         "rest from the noise and join the rebirth of this place",
       ".hero-subtitle-mobile span:nth-child(1)": "Take the first step",
       ".hero-subtitle-mobile span:nth-child(2)": "toward a dream that almost came true",
-      ".hero-actions .button-gold span": "Присоединиться",
+      ".hero-actions .button-gold span": "Join us",
       ".hero-actions .button-glass span": "Learn more",
       "#about-title": "What is MROJA",
       ".about-item:nth-child(1) h3": "Reviving the homestead",
@@ -182,6 +192,9 @@
       link.textContent = lang === "ru" ? "EN" : "RU";
       link.setAttribute("href", lang === "ru" ? "../" : "ru/");
       link.setAttribute("aria-label", lang === "ru" ? "English version" : "Русская версия");
+      link.addEventListener("click", () => {
+        sessionStorage.setItem("mroja-lang-choice", lang === "ru" ? "en" : "ru");
+      });
     });
   }
 
