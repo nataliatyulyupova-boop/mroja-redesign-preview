@@ -176,7 +176,7 @@ function initCarousel() {
       const diff = relative(cardIndex, normalized);
       const abs = Math.abs(diff);
       const isMobile = window.matchMedia("(max-width: 720px)").matches;
-      const mobileCardWidth = Math.min(330, Math.max(270, window.innerWidth * 0.78));
+      const mobileCardWidth = Math.min(286, Math.max(238, window.innerWidth * 0.7));
       const mobileStep = mobileCardWidth + 20;
       const mobileStart = -(stage.clientWidth / 2 - 28 - mobileCardWidth / 2);
       const scale = isMobile ? Math.max(0.76, 1 - abs * 0.12) : Math.max(0.46, 1 - abs * 0.11);
@@ -518,6 +518,59 @@ function initAudienceSlider() {
   }
 }
 
+function initMobileBottomNav() {
+  const nav = document.querySelector("[data-mobile-bottom-nav]");
+  if (!nav) return;
+
+  const mobileQuery = window.matchMedia("(max-width: 720px)");
+  const links = Array.from(nav.querySelectorAll("a[href^='#']"));
+  const targets = links
+    .map((link) => {
+      const id = link.getAttribute("href").slice(1);
+      const target = id === "top" ? document.querySelector(".hero") : document.getElementById(id);
+      return { id, link, target };
+    })
+    .filter((item) => item.target);
+
+  function sync() {
+    if (!mobileQuery.matches) {
+      nav.classList.remove("is-visible");
+      return;
+    }
+
+    const hero = document.querySelector(".hero");
+    const heroBottom = hero ? hero.getBoundingClientRect().bottom : 0;
+    nav.classList.toggle("is-visible", heroBottom < window.innerHeight - 96);
+
+    let active = "top";
+    const anchorLine = window.innerHeight * 0.42;
+    targets.forEach(({ id, target }) => {
+      const rect = target.getBoundingClientRect();
+      if (rect.top <= anchorLine && rect.bottom > 90) active = id;
+    });
+
+    links.forEach((link) => {
+      const id = link.dataset.navTarget || link.getAttribute("href").slice(1);
+      link.classList.toggle("is-active", id === active);
+    });
+  }
+
+  links.forEach((link) => {
+    link.addEventListener("click", (event) => {
+      const hash = link.getAttribute("href");
+      const target = hash === "#top" ? document.querySelector(".hero") : document.querySelector(hash);
+      if (!target) return;
+      event.preventDefault();
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+
+  window.addEventListener("scroll", sync, { passive: true });
+  window.addEventListener("resize", sync);
+  mobileQuery.addEventListener?.("change", sync);
+  sync();
+}
+
 initTabs();
 initCarousel();
 initAudienceSlider();
@@ -525,4 +578,5 @@ initAudienceSlider();
 initBackToTop();
 initMobileMenu();
 initSmoothAnchors();
+initMobileBottomNav();
 // Native muted autoplay is handled by the video element; avoid extra play() calls on iOS.

@@ -4416,3 +4416,468 @@ details:not([open]) summary::after {
     right: 28px;
   }
 }
+
+/* New lower sections */
+.button,
+button,
+.header-button,
+.mobile-header-button,
+.stage-support-button,
+.donation-pill {
+  font-family: var(--font-body);
+}
+
+.header-button,
+.mobile-header-button {
+  background: #c8a787;
+  color: #202231;
+}
+
+.mission-visual {
+  background:
+    linear-gradient(to bottom, #f8f8f0 0%, rgba(248, 248, 240, 0.98) 12%, rgba(248, 248, 240, 0.74) 24%, rgba(248, 248, 240, 0.18) 42%, rgba(248, 248, 240, 0) 56%),
+    url("assets/mroja-mission-bg-dekstop.jpg") center bottom / cover no-repeat;
+}
+
+.about-us-section {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(to bottom, #f8f8f0 0%, #f8f8f0 58%, rgba(248, 248, 240, 0.76) 74%, rgba(248, 248, 240, 0.18) 100%),
+    url("assets/mroja-natalia-tiuliupova-siarhei-hun-bg.jpg") center bottom / cover no-repeat;
+  padding: clamp(72px, 8vw, 110px) 0 clamp(120px, 15vw, 210px);
+}
+
+.about-us-inner {
+  position: relative;
+  z-index: 2;
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.about-us-section h2,
+.join-section h2,
+.contacts-section h2 {
+  margin: 0;
+  text-align: center;
+}
+
+.about-us-content {
+  display: grid;
+  grid-template-columns: minmax(320px, 430px) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(42px, 5vw, 72px);
+  width: min(930px, 100%);
+  margin: 40px auto 0;
+}
+
+.about-us-photo {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 22px;
+  box-shadow: 0 22px 50px rgba(45, 58, 75, 0.12);
+}
+
+.about-us-copy {
+  display: grid;
+  gap: 18px;
+}
+
+.about-us-copy p {
+  margin: 0;
+  line-height: 1.28;
+}
+
+.join-section {
+  background: #f8f8f0;
+  padding: clamp(62px, 7vw, 96px) 0 clamp(64px, 8vw, 108px);
+}
+
+.join-inner {
+  width: min(900px, calc(100% - 40px));
+  margin: 0 auto;
+  text-align: center;
+}
+
+.join-inner > p {
+  width: min(560px, 100%);
+  margin: 28px auto 0;
+  line-height: 1.25;
+}
+
+.join-actions {
+  display: flex;
+  justify-content: center;
+  gap: clamp(28px, 5vw, 58px);
+  margin-top: 44px;
+}
+
+.donation-pill {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr);
+  align-items: center;
+  width: min(330px, 100%);
+  min-height: 58px;
+  padding: 7px 28px 7px 7px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+.donation-pill:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px rgba(45, 58, 75, 0.14);
+}
+
+.donation-pill-dark {
+  background: #2d3a4b;
+  color: #f8f8f0;
+}
+
+.donation-pill-light {
+  border: 1px solid #2d3a4b;
+  background: rgba(248, 248, 240, 0.72);
+  color: #2d3a4b;
+}
+
+.donation-pill-icon {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border-radius: 50%;
+  background: #c8a787;
+}
+
+.donation-pill-light .donation-pill-icon {
+  background: #2d3a4b;
+}
+
+.donation-pill-icon img {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+}
+
+.donation-pill-text {
+  display: grid;
+  justify-items: center;
+  line-height: 1;
+}
+
+.donation-pill-text strong {
+  font-family: var(--font-body);
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.donation-pill-text small {
+  margin-top: 3px;
+  font-size: 10px;
+  line-height: 1;
+}
+
+.contacts-section {
+  position: relative;
+  z-index: 2;
+  margin-top: 0;
+  padding: clamp(66px, 8vw, 94px) 0 clamp(70px, 8vw, 104px);
+  border-radius: 38px 38px 0 0;
+  background: #2d3a4b;
+  color: #f8f8f0;
+}
+
+.contacts-inner {
+  width: min(820px, calc(100% - 40px));
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contacts-social {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  margin-top: 34px;
+}
+
+.contacts-social a {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border-radius: 4px;
+  background: #c8a787;
+  color: #fff;
+  text-decoration: none;
+  transition: transform 180ms ease, background 180ms ease;
+}
+
+.contacts-social a:hover {
+  transform: translateY(-2px);
+  background: #d6b998;
+}
+
+.contacts-social span {
+  font-size: 27px;
+  line-height: 1;
+}
+
+.contacts-lines {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  margin-top: 28px;
+  font-style: normal;
+}
+
+.contacts-lines a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.contacts-lines small {
+  display: none;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 13px;
+}
+
+.copyright-section {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  padding: 36px 20px 40px;
+  background: #e6e9e9;
+  color: #202231;
+  text-align: center;
+}
+
+.copyright-section img {
+  width: 148px;
+  height: auto;
+}
+
+.copyright-section p {
+  margin: 0;
+  font-size: 15px;
+}
+
+.mobile-bottom-nav {
+  display: none;
+}
+
+/* Stages fine tuning */
+.stage-support {
+  width: min(560px, calc(100% - 40px));
+  gap: 24px;
+}
+
+.stage-support-button {
+  grid-template-columns: 48px minmax(0, 1fr);
+  min-height: 58px;
+  padding: 7px 22px 7px 7px;
+  border-width: 1px;
+}
+
+.stage-support-text strong {
+  font-family: var(--font-body);
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.stage-support-text small {
+  font-size: 9px;
+}
+
+@media (max-width: 720px) {
+  .mission-visual {
+    background:
+      linear-gradient(to bottom, #f8f8f0 0%, rgba(248, 248, 240, 0.82) 15%, rgba(248, 248, 240, 0.18) 36%, rgba(248, 248, 240, 0) 52%),
+      url("assets/mroja-mission-bg-mobile.jpg") center bottom / cover no-repeat;
+  }
+
+  .about-us-section {
+    padding: 68px 0 230px;
+    background:
+      linear-gradient(to bottom, #f8f8f0 0%, #f8f8f0 66%, rgba(248, 248, 240, 0.7) 80%, rgba(248, 248, 240, 0.08) 100%),
+      url("assets/mroja-natalia-tiuliupova-siarhei-hun-bg.jpg") center bottom / 130% auto no-repeat;
+  }
+
+  .about-us-inner {
+    width: min(326px, calc(100% - 44px));
+  }
+
+  .about-us-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 26px;
+    text-align: center;
+  }
+
+  .about-us-photo {
+    order: -1;
+    width: 124px;
+    border-radius: 50%;
+    box-shadow: none;
+  }
+
+  .about-us-copy {
+    gap: 18px;
+  }
+
+  .join-section {
+    padding: 58px 0 66px;
+  }
+
+  .join-inner {
+    width: min(318px, calc(100% - 44px));
+  }
+
+  .join-inner > p {
+    margin-top: 22px;
+  }
+
+  .join-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin-top: 32px;
+  }
+
+  .donation-pill {
+    width: 100%;
+    min-height: 56px;
+  }
+
+  .contacts-section {
+    padding: 52px 0 58px;
+    border-radius: 28px 28px 0 0;
+  }
+
+  .contacts-inner {
+    width: min(318px, calc(100% - 44px));
+  }
+
+  .contacts-social {
+    gap: 18px;
+    margin-top: 24px;
+  }
+
+  .contacts-social a {
+    width: 32px;
+    height: 32px;
+  }
+
+  .contacts-social span {
+    font-size: 19px;
+  }
+
+  .contacts-lines {
+    gap: 7px;
+    margin-top: 20px;
+  }
+
+  .contacts-lines small {
+    display: block;
+  }
+
+  .copyright-section {
+    padding-bottom: calc(92px + env(safe-area-inset-bottom));
+  }
+
+  .copyright-section img {
+    width: 118px;
+  }
+
+  .mobile-bottom-nav {
+    position: fixed;
+    right: 10px;
+    bottom: calc(10px + env(safe-area-inset-bottom));
+    left: 10px;
+    z-index: 10050;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    padding: 9px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.42);
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.28);
+    box-shadow: 0 18px 48px rgba(32, 34, 49, 0.18);
+    backdrop-filter: blur(18px) saturate(1.28);
+    -webkit-backdrop-filter: blur(18px) saturate(1.28);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(18px);
+    transition: opacity 220ms ease, transform 220ms ease;
+  }
+
+  .mobile-bottom-nav.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .mobile-bottom-nav a {
+    display: grid;
+    justify-items: center;
+    gap: 3px;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 10px;
+    line-height: 1;
+    text-decoration: none;
+  }
+
+  .mobile-bottom-icon {
+    display: block;
+    width: 23px;
+    height: 23px;
+    background: currentColor;
+    mask: var(--icon) center / contain no-repeat;
+    -webkit-mask: var(--icon) center / contain no-repeat;
+  }
+
+  .mobile-bottom-nav a.is-active {
+    color: #c8a787;
+  }
+
+  .restoration-card {
+    width: min(286px, 70vw);
+  }
+
+  .restoration-card img {
+    height: min(268px, calc(70vw - 16px));
+    aspect-ratio: 1 / 1;
+  }
+
+  .stage-support {
+    width: min(286px, 70vw);
+    margin-top: -158px;
+    transform: translateX(calc((min(286px, 70vw) - 100vw + 58px) / 2));
+  }
+
+  .stage-support-button {
+    min-height: 50px;
+    border-width: 1px;
+  }
+
+  .stage-support-text strong {
+    font-size: 19px;
+  }
+
+  .restoration .carousel-arrow {
+    width: 54px;
+    height: 90px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, rgba(80, 79, 71, 0.32), rgba(80, 79, 71, 0.72));
+    color: #fff;
+  }
+
+  .restoration .carousel-arrow-prev {
+    right: 78px;
+  }
+
+  .restoration .carousel-arrow-next {
+    right: 16px;
+  }
+}

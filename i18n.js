@@ -59,7 +59,27 @@
       "#restoration-title": "Этапы работ",
       ".team-copy h2": "Who we are",
       ".team-copy h3": "Sergey Gun and Natalia Tiuliupova",
+      "#team-title": "Who we are",
+      ".about-us-copy p:nth-child(1)":
+        "We are a Belarusian couple who were forced to leave our country. Sergey Gun was a political prisoner, and Natalia Tiuliupova also faced political persecution in Belarus.",
+      ".about-us-copy p:nth-child(2)":
+        "We bought an abandoned homestead in the forest of Podlasie. It would have been easier to demolish the old house, but we want to preserve its character and bring life back to this place.",
+      ".about-us-copy p:nth-child(3)":
+        "Sergey works with wood, builds and restores houses. In Belarus, he had a chicken farm with 600+ hens, and he has helped more than 10 old houses return to life. Natalia launches projects, builds communication, gathers people around an idea, and turns chaos into a clear system.",
+      ".about-us-copy p:nth-child(4)":
+        "We dream of building an eco-village — a place of strength where people from different countries can come to rest, work with their hands, live closer to nature, and touch living Belarusian culture.",
       "#join-title": "Become part of MROJA's birth",
+      ".join-inner > p":
+        "To bring the homestead back to life faster, we need support. Even 1 eur will help create a place where people can come for silence, a pause, and human warmth.",
+      ".join-actions .donation-pill-dark strong": "Support PLN",
+      ".join-actions .donation-pill-dark small": "Zrzutka / Poland",
+      ".join-actions .donation-pill-light strong": "Support EUR",
+      ".join-actions .donation-pill-light small": "Buy Me a Coffee / other countries",
+      "#contacts-title": "Contacts",
+      ".mobile-bottom-nav a:nth-child(1) span:last-child": "Home",
+      ".mobile-bottom-nav a:nth-child(2) span:last-child": "About",
+      ".mobile-bottom-nav a:nth-child(3) span:last-child": "Support",
+      ".mobile-bottom-nav a:nth-child(4) span:last-child": "Contacts",
       "#tab-donate strong": "Support with a donation",
       "#tab-help strong": "Come and help",
       "#tab-partner strong": "Become a partner",
