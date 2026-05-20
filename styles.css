@@ -3997,8 +3997,8 @@ details:not([open]) summary::after {
   min-height: clamp(330px, 36vw, 500px);
   margin-top: 22px;
   background:
-    linear-gradient(to bottom, #f8f8f0 0%, rgba(248, 248, 240, 0.98) 12%, rgba(248, 248, 240, 0.74) 24%, rgba(248, 248, 240, 0.18) 42%, rgba(248, 248, 240, 0) 56%),
-    url("assets/mroja-mission-bg-dekstop.JPG") center bottom / cover no-repeat;
+    linear-gradient(to bottom, #f8f8f0 0%, rgba(248, 248, 240, 0.9) 13%, rgba(248, 248, 240, 0.48) 28%, rgba(248, 248, 240, 0.08) 44%, rgba(248, 248, 240, 0) 56%),
+    url("assets/mroja-mission-bg-desktop.jpg") center bottom / cover no-repeat;
 }
 
 .mission-visual::before {
@@ -4093,8 +4093,8 @@ details:not([open]) summary::after {
     margin-top: -18px;
     border-radius: 0 0 18px 18px;
     background:
-      linear-gradient(to bottom, #f8f8f0 0%, rgba(248, 248, 240, 0.82) 15%, rgba(248, 248, 240, 0.18) 36%, rgba(248, 248, 240, 0) 52%),
-      url("assets/mroja-mission-bg-mobile.JPG") center bottom / cover no-repeat;
+      linear-gradient(to bottom, #f8f8f0 0%, rgba(248, 248, 240, 0.78) 15%, rgba(248, 248, 240, 0.18) 34%, rgba(248, 248, 240, 0) 48%),
+      url("assets/mroja-mission-bg-mobile.jpg") center bottom / cover no-repeat;
   }
 
   .mission-visual::before {
@@ -4435,8 +4435,8 @@ button,
 
 .mission-visual {
   background:
-    linear-gradient(to bottom, #f8f8f0 0%, rgba(248, 248, 240, 0.98) 12%, rgba(248, 248, 240, 0.74) 24%, rgba(248, 248, 240, 0.18) 42%, rgba(248, 248, 240, 0) 56%),
-    url("assets/mroja-mission-bg-dekstop.jpg") center bottom / cover no-repeat;
+    linear-gradient(to bottom, #f8f8f0 0%, rgba(248, 248, 240, 0.9) 13%, rgba(248, 248, 240, 0.48) 28%, rgba(248, 248, 240, 0.08) 44%, rgba(248, 248, 240, 0) 56%),
+    url("assets/mroja-mission-bg-desktop.jpg") center bottom / cover no-repeat;
 }
 
 .about-us-section {
@@ -5025,7 +5025,7 @@ button,
   .mission-visual {
     border-radius: 0 0 26px 26px;
     background:
-      linear-gradient(to bottom, #f8f8f0 0%, rgba(248, 248, 240, 0.82) 15%, rgba(248, 248, 240, 0.18) 36%, rgba(248, 248, 240, 0) 52%),
+      linear-gradient(to bottom, #f8f8f0 0%, rgba(248, 248, 240, 0.78) 15%, rgba(248, 248, 240, 0.18) 34%, rgba(248, 248, 240, 0) 48%),
       url("assets/mroja-mission-bg-mobile.jpg") center bottom / cover no-repeat !important;
   }
 
