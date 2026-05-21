@@ -4094,7 +4094,7 @@ details:not([open]) summary::after {
     border-radius: 0 0 18px 18px;
     background:
       linear-gradient(to bottom, #f8f8f0 0%, rgba(248, 248, 240, 0.78) 15%, rgba(248, 248, 240, 0.18) 34%, rgba(248, 248, 240, 0) 48%),
-      url("assets/mroja-mission-bg-mobile.jpg") center bottom / cover no-repeat;
+      url("assets/mroja-mission-bg-mobile.JPG") center bottom / cover no-repeat;
   }
 
   .mission-visual::before {
@@ -4693,7 +4693,7 @@ button,
   .mission-visual {
     background:
       linear-gradient(to bottom, #f8f8f0 0%, rgba(248, 248, 240, 0.82) 15%, rgba(248, 248, 240, 0.18) 36%, rgba(248, 248, 240, 0) 52%),
-      url("assets/mroja-mission-bg-mobile.jpg") center bottom / cover no-repeat;
+      url("assets/mroja-mission-bg-mobile.JPG") center bottom / cover no-repeat;
   }
 
   .about-us-section {
@@ -5026,7 +5026,7 @@ button,
     border-radius: 0 0 26px 26px;
     background:
       linear-gradient(to bottom, #f8f8f0 0%, rgba(248, 248, 240, 0.78) 15%, rgba(248, 248, 240, 0.18) 34%, rgba(248, 248, 240, 0) 48%),
-      url("assets/mroja-mission-bg-mobile.jpg") center bottom / cover no-repeat !important;
+      url("assets/mroja-mission-bg-mobile.JPG") center bottom / cover no-repeat !important;
   }
 
   .restoration {
@@ -5137,5 +5137,56 @@ button,
       0 8px 18px rgba(32, 34, 49, 0.12);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
+  }
+}
+
+/* Targeted publish fixes: mission background, temporary ornaments, mobile stages controls */
+.about-section-ornament,
+.audience-section-ornament,
+.decor-ornament,
+.ornament::before,
+.ornament::after,
+.ornament-footer::before,
+.ornament-footer::after {
+  display: none !important;
+}
+
+.mission-section-ornament {
+  display: block !important;
+}
+
+.mission-visual {
+  background:
+    linear-gradient(to bottom, #f8f8f0 0%, rgba(248, 248, 240, 0.86) 12%, rgba(248, 248, 240, 0.42) 28%, rgba(248, 248, 240, 0.08) 45%, rgba(248, 248, 240, 0) 58%),
+    url("assets/mroja-mission-bg-desktop.jpg") center bottom / cover no-repeat !important;
+}
+
+@media (max-width: 720px) {
+  .mission-visual {
+    border-radius: 0 0 26px 26px !important;
+    background:
+      linear-gradient(to bottom, #f8f8f0 0%, rgba(248, 248, 240, 0.76) 12%, rgba(248, 248, 240, 0.18) 32%, rgba(248, 248, 240, 0) 50%),
+      url("assets/mroja-mission-bg-mobile.JPG") center bottom / cover no-repeat !important;
+  }
+
+  .restoration .carousel-arrow {
+    display: none !important;
+  }
+
+  .restoration .carousel {
+    padding-bottom: 136px;
+  }
+
+  .stage-support {
+    width: min(260px, 64vw) !important;
+    margin: -120px auto 0 !important;
+    transform: none !important;
+    gap: 6px !important;
+  }
+
+  .stage-support-button {
+    min-height: 44px !important;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
   }
 }
