@@ -1,17 +1,6 @@
 (function () {
   const isRussian = /\/ru\/?$/.test(window.location.pathname) || /\/ru\//.test(window.location.pathname);
   const lang = isRussian ? "ru" : "en";
-  const isPreviewHost =
-    /github\.io$/i.test(window.location.hostname) ||
-    /^(localhost|127\.0\.0\.1)$/i.test(window.location.hostname);
-  const browserPrefersRussian = /^ru\b/i.test(navigator.language || "");
-
-  if (!isRussian && !isPreviewHost && browserPrefersRussian && !sessionStorage.getItem("mroja-lang-choice")) {
-    sessionStorage.setItem("mroja-lang-choice", "auto-ru");
-    window.location.replace("ru/");
-    return;
-  }
-
   const en = {
     htmlLang: "en",
     title: "MROJA Eco-Village",
