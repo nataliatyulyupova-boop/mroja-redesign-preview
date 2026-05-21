@@ -4425,6 +4425,16 @@ button,
 .stage-support-button,
 .donation-pill {
   font-family: var(--font-body);
+  font-weight: 400 !important;
+}
+
+.button *,
+button *,
+.header-button *,
+.mobile-header-button *,
+.stage-support-button *,
+.donation-pill * {
+  font-weight: 400 !important;
 }
 
 .header-button,
@@ -5189,4 +5199,27 @@ button,
     padding-top: 5px !important;
     padding-bottom: 5px !important;
   }
+}
+
+/* Keep all CTA/button text regular-weight. */
+.button,
+button,
+.header-button,
+.mobile-header-button,
+.stage-support-button,
+.donation-pill,
+.simple-donate-button,
+.share-button {
+  font-weight: 400 !important;
+}
+
+.button *,
+button *,
+.header-button *,
+.mobile-header-button *,
+.stage-support-button *,
+.donation-pill *,
+.simple-donate-button *,
+.share-button * {
+  font-weight: 400 !important;
 }
