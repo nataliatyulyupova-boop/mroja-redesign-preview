@@ -571,6 +571,111 @@ function initMobileBottomNav() {
   sync();
 }
 
+function initGallery() {
+  const items = Array.from(document.querySelectorAll("[data-gallery-item]"));
+  const lightbox = document.querySelector("[data-gallery-lightbox]");
+  if (!items.length || !lightbox) return;
+
+  const image = lightbox.querySelector("[data-gallery-image]");
+  const closeButton = lightbox.querySelector("[data-gallery-close]");
+  const prevButton = lightbox.querySelector("[data-gallery-prev]");
+  const nextButton = lightbox.querySelector("[data-gallery-next]");
+  const mobileQuery = window.matchMedia("(max-width: 720px)");
+  let activeIndex = 0;
+  let shownCount = 0;
+  let touchStartX = 0;
+
+  function visibleInitialCount() {
+    return mobileQuery.matches ? 4 : 8;
+  }
+
+  function reveal(count) {
+    const nextCount = Math.min(count, items.length);
+    items.forEach((item, index) => {
+      const shouldShow = index < nextCount;
+      item.classList.toggle("is-gallery-hidden", !shouldShow);
+      if (shouldShow && index >= shownCount) {
+        item.classList.add("is-gallery-revealing");
+        requestAnimationFrame(() => item.classList.remove("is-gallery-revealing"));
+      }
+    });
+    shownCount = nextCount;
+  }
+
+  function revealNextBatch() {
+    reveal(shownCount + (mobileQuery.matches ? 4 : 6));
+  }
+
+  function setImage(index) {
+    activeIndex = (index + items.length) % items.length;
+    const item = items[activeIndex];
+    const source = item.dataset.gallerySrc || item.querySelector("img")?.src || "";
+    image.src = source;
+    image.alt = item.querySelector("img")?.alt || "";
+  }
+
+  function open(index) {
+    setImage(index);
+    lightbox.hidden = false;
+    document.body.classList.add("gallery-lightbox-open");
+  }
+
+  function close() {
+    lightbox.hidden = true;
+    image.removeAttribute("src");
+    document.body.classList.remove("gallery-lightbox-open");
+  }
+
+  items.forEach((item, index) => {
+    item.addEventListener("click", () => open(index));
+  });
+
+  closeButton?.addEventListener("click", close);
+  prevButton?.addEventListener("click", () => setImage(activeIndex - 1));
+  nextButton?.addEventListener("click", () => setImage(activeIndex + 1));
+
+  lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox) close();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (lightbox.hidden) return;
+    if (event.key === "Escape") close();
+    if (event.key === "ArrowLeft") setImage(activeIndex - 1);
+    if (event.key === "ArrowRight") setImage(activeIndex + 1);
+  });
+
+  lightbox.addEventListener("touchstart", (event) => {
+    touchStartX = event.changedTouches[0]?.clientX || 0;
+  }, { passive: true });
+
+  lightbox.addEventListener("touchend", (event) => {
+    const touchEndX = event.changedTouches[0]?.clientX || 0;
+    const delta = touchEndX - touchStartX;
+    if (Math.abs(delta) > 44) {
+      setImage(activeIndex + (delta < 0 ? 1 : -1));
+    }
+  }, { passive: true });
+
+  reveal(visibleInitialCount());
+
+  function maybeRevealOnScroll() {
+    const gallery = items[0]?.closest("[data-gallery]");
+    if (!gallery || shownCount >= items.length) return;
+    const rect = gallery.getBoundingClientRect();
+    if (rect.bottom < window.innerHeight + 420) revealNextBatch();
+  }
+
+  window.addEventListener("scroll", maybeRevealOnScroll, { passive: true });
+  window.addEventListener("resize", maybeRevealOnScroll);
+  maybeRevealOnScroll();
+
+  mobileQuery.addEventListener?.("change", () => {
+    shownCount = 0;
+    reveal(visibleInitialCount());
+  });
+}
+
 initTabs();
 initCarousel();
 initAudienceSlider();
@@ -579,4 +684,5 @@ initBackToTop();
 initMobileMenu();
 initSmoothAnchors();
 initMobileBottomNav();
+initGallery();
 // Native muted autoplay is handled by the video element; avoid extra play() calls on iOS.
