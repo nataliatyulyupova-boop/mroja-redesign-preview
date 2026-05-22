@@ -1,6 +1,9 @@
 (function () {
-  const isRussian = /\/ru\/?$/.test(window.location.pathname) || /\/ru\//.test(window.location.pathname);
-  const lang = isRussian ? "ru" : "en";
+  const path = window.location.pathname;
+  const isRussian = /\/ru(?:\/|$)/.test(path);
+  const isBelarusian = /\/by(?:\/|$)/.test(path);
+  const isPolish = /\/pl(?:\/|$)/.test(path);
+  const lang = isRussian ? "ru" : isBelarusian ? "by" : isPolish ? "pl" : "en";
   const en = {
     htmlLang: "en",
     title: "MROJA Eco-Village",
@@ -80,11 +83,11 @@
       ".join-actions .donation-pill-dark small": "Zrzutka / Poland",
       ".join-actions .donation-pill-light strong": "Support EUR",
       ".join-actions .donation-pill-light small": "Buy Me a Coffee / other countries",
+      ".mobile-support-pill-primary span": "Support PLN",
+      ".mobile-support-pill-primary small": "Zrzutka / Poland",
+      ".mobile-support-pill-light span": "Support EN",
+      ".mobile-support-pill-light small": "Buy Me a Coffee / other countries",
       "#contacts-title": "Contacts",
-      ".mobile-bottom-nav a:nth-child(1) span:last-child": "Home",
-      ".mobile-bottom-nav a:nth-child(2) span:last-child": "About",
-      ".mobile-bottom-nav a:nth-child(3) span:last-child": "Support",
-      ".mobile-bottom-nav a:nth-child(4) span:last-child": "Contacts",
       "#tab-donate strong": "Support with a donation",
       "#tab-help strong": "Come and help",
       "#tab-partner strong": "Become a partner",
@@ -182,18 +185,25 @@
   }
 
   function updateLanguageSwitch() {
-    const switches = document.querySelectorAll("[data-lang-switch]");
+    const switches = document.querySelectorAll("[data-language-option]");
     switches.forEach((link) => {
-      link.textContent = lang === "ru" ? "EN" : "RU";
-      link.setAttribute("href", lang === "ru" ? "../" : "ru/");
-      link.setAttribute("aria-label", lang === "ru" ? "English version" : "Русская версия");
+      const target = link.dataset.languageOption || "en";
+      const isActive = target === lang;
+      link.classList.toggle("is-active", isActive);
+      if (isActive) link.setAttribute("aria-current", "page");
+      else link.removeAttribute("aria-current");
       link.addEventListener("click", () => {
-        sessionStorage.setItem("mroja-lang-choice", lang === "ru" ? "en" : "ru");
+        try {
+          localStorage.setItem("preferredLanguage", target);
+        } catch (error) {}
       });
     });
   }
 
-  if (lang === "en") applyEnglish();
-  else document.documentElement.lang = "ru";
+  if (lang === "ru") document.documentElement.lang = "ru";
+  else {
+    applyEnglish();
+    document.documentElement.lang = lang;
+  }
   updateLanguageSwitch();
 })();

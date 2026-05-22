@@ -5468,3 +5468,208 @@ body.gallery-lightbox-open {
     box-shadow: none !important;
   }
 }
+
+/* Language navigation + fixed mobile support */
+.mobile-glass-header,
+.mobile-fixed-support {
+  display: none;
+}
+
+.desktop-language-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 4px;
+}
+
+.language-switch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 34px;
+  min-height: 30px;
+  padding: 0 8px;
+  border: 1px solid rgba(32, 34, 49, 0.14);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.45);
+  color: #202231;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1;
+  text-decoration: none;
+  transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+
+.language-switch:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.language-switch.is-active,
+.mobile-lang-pill.is-active {
+  border-color: rgba(32, 34, 49, 0.18);
+  background: #c8a787;
+  color: #111111;
+}
+
+.mobile-bottom-nav {
+  display: none !important;
+}
+
+@media (max-width: 720px) {
+  body {
+    padding-bottom: calc(112px + env(safe-area-inset-bottom));
+  }
+
+  .site-header {
+    display: none !important;
+  }
+
+  .mobile-glass-header {
+    position: fixed;
+    top: calc(10px + env(safe-area-inset-top));
+    left: 12px;
+    right: 12px;
+    z-index: 12000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 8px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.48);
+    border-radius: 22px;
+    background: rgba(248, 248, 240, 0.54);
+    box-shadow: 0 12px 32px rgba(32, 34, 49, 0.12);
+    backdrop-filter: blur(18px) saturate(1.18);
+    -webkit-backdrop-filter: blur(18px) saturate(1.18);
+  }
+
+  .mobile-glass-logo {
+    display: flex;
+    align-items: center;
+    width: 104px;
+    min-width: 92px;
+  }
+
+  .mobile-glass-logo img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .mobile-language-switcher {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .mobile-lang-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 34px;
+    min-height: 30px;
+    padding: 0 8px;
+    border: 1px solid rgba(17, 17, 17, 0.12);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.38);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    color: #111111;
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1;
+    text-decoration: none;
+  }
+
+  .mobile-fixed-support {
+    position: fixed;
+    left: 12px;
+    right: 12px;
+    bottom: calc(10px + env(safe-area-inset-bottom));
+    z-index: 11990;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 8px;
+    pointer-events: auto;
+  }
+
+  .mobile-support-pill {
+    display: flex;
+    min-width: 0;
+    min-height: 56px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 10px;
+    border-radius: 20px;
+    color: #111111;
+    font-family: var(--font-body);
+    font-weight: 400;
+    line-height: 1.05;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 12px 30px rgba(32, 34, 49, 0.16);
+    backdrop-filter: blur(16px) saturate(1.16);
+    -webkit-backdrop-filter: blur(16px) saturate(1.16);
+  }
+
+  .mobile-support-pill span,
+  .mobile-support-pill small {
+    display: block;
+    font-weight: 400;
+    white-space: nowrap;
+  }
+
+  .mobile-support-pill span {
+    font-size: 17px;
+  }
+
+  .mobile-support-pill small {
+    margin-top: 3px;
+    font-size: 10px;
+  }
+
+  .mobile-support-pill-primary {
+    border: 1px solid rgba(255, 255, 255, 0.32);
+    background: rgba(200, 167, 135, 0.9);
+  }
+
+  .mobile-support-pill-light {
+    border: 1px solid rgba(17, 17, 17, 0.16);
+    background: rgba(255, 255, 255, 0.54);
+  }
+}
+
+@media (max-width: 380px) {
+  .mobile-glass-header {
+    left: 10px;
+    right: 10px;
+    gap: 8px;
+    padding-inline: 8px;
+  }
+
+  .mobile-glass-logo {
+    width: 92px;
+  }
+
+  .mobile-language-switcher {
+    gap: 4px;
+  }
+
+  .mobile-lang-pill {
+    min-width: 30px;
+    min-height: 28px;
+    padding-inline: 6px;
+    font-size: 12px;
+  }
+
+  .mobile-support-pill span {
+    font-size: 15px;
+  }
+
+  .mobile-support-pill small {
+    font-size: 9px;
+  }
+}

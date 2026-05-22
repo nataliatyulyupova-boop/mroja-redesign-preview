@@ -20,11 +20,22 @@
     <meta property="og:image" content="../assets/mroja-share-snippet.png">
     <link rel="icon" href="../assets/M%20fivicon.svg" type="image/svg+xml">
     <link rel="shortcut icon" href="../assets/M%20fivicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../styles.css?v=20260521-gallery-1">
-    <script src="../i18n.js?v=20260520-publish-1" defer></script>
-    <script src="../script.js?v=20260521-gallery-1" defer></script>
+    <link rel="stylesheet" href="../styles.css?v=20260522-mobile-lang-2">
+    <script src="../i18n.js?v=20260522-mobile-lang-2" defer></script>
+    <script src="../script.js?v=20260522-mobile-lang-2" defer></script>
   </head>
   <body>
+    <nav class="mobile-glass-header" aria-label="Mobile language navigation">
+      <a class="mobile-glass-logo" href="#top" aria-label="MROJA home">
+        <img src="../assets/logo-mroja.svg" alt="MROJA Eco-Village">
+      </a>
+      <div class="mobile-language-switcher" aria-label="Choose language">
+        <a class="mobile-lang-pill is-active" href="/" data-language-option="en">EN</a>
+        <a class="mobile-lang-pill" href="/ru/" data-language-option="ru">RU</a>
+        <a class="mobile-lang-pill" href="/by/" data-language-option="by">BY</a>
+        <a class="mobile-lang-pill" href="/pl/" data-language-option="pl">PL</a>
+      </div>
+    </nav>
     <header class="site-header" aria-label="Главная навигация">
       <div class="header-inner">
         <a class="logo" href="#top" aria-label="MROJA, перейти к началу страницы">
@@ -40,7 +51,12 @@
           <a href="#stages">Этапы работ</a>
           <a href="#team">Кто мы</a>
           <a href="#contacts">Контакты</a>
-          <a class="language-switch" href="../" data-lang-switch>EN</a>
+          <span class="desktop-language-switcher" aria-label="Choose language">
+            <a class="language-switch is-active" href="/" data-language-option="en">EN</a>
+            <a class="language-switch" href="/ru/" data-language-option="ru">RU</a>
+            <a class="language-switch" href="/by/" data-language-option="by">BY</a>
+            <a class="language-switch" href="/pl/" data-language-option="pl">PL</a>
+          </span>
         </nav>
         <a class="header-button" href="#join">Поддержать проект</a>
         <button class="menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle>
@@ -56,7 +72,10 @@
           <a href="#team">Кто мы</a>
           <a href="#join">Поддержать проект</a>
           <a href="#contacts">Контакты</a>
-          <a href="../" data-lang-switch>EN</a>
+          <a href="/" data-language-option="en">EN</a>
+          <a href="/ru/" data-language-option="ru">RU</a>
+          <a href="/by/" data-language-option="by">BY</a>
+          <a href="/pl/" data-language-option="pl">PL</a>
         </nav>
       </div>
     </header>
@@ -65,7 +84,7 @@
       <section class="hero" aria-labelledby="hero-title">
         <img class="hero-edge hero-edge-top" src="../assets/top-edge.svg" alt="" aria-hidden="true">
         <div class="hero-media">
-          <video class="hero-video" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="assets/hero/hero-house-desktop.jpg" aria-hidden="true">
+          <video class="hero-video" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="../assets/hero/hero-house-desktop.jpg" aria-hidden="true">
             <source src="../assets/hero/hero-hd.mp4?v=20260516-1404" type="video/mp4">
           </video>
           <button class="hero-play" type="button" aria-label="Запустить видео" data-hero-play></button>
@@ -86,7 +105,7 @@
             </span>
           </p>
           <div class="hero-actions">
-            <a class="button button-gold" href="#join"><span>Присоединиться</span></a>
+            <a class="button button-gold" href="#join"><span>Join us</span></a>
             <a class="button button-glass glass" href="#about"><span>Узнать подробнее</span></a>
           </div>
           </div>
@@ -97,36 +116,36 @@
         <img class="about-section-ornament" src="../assets/ornament-belarus.svg" alt="" aria-hidden="true">
         <div class="about-section-inner">
           <div class="section-heading about-section-heading">
-            <h2 id="about-title">Что такое MROJA</h2>
-            <p>Беларусь, в которую можно приехать</p>
+            <h2 id="about-title">What is MROJA</h2>
+            <p>Belarus you can actually come to</p>
           </div>
           <div class="about-section-grid">
             <article class="about-section-card">
               <img class="about-section-image" src="../assets/mroja-about-glamping.jpg" alt="">
               <div>
-                <h3>Глэмпинг</h3>
-                <p>Палатки, летние домики, костер и простые удобства</p>
+                <h3>Glamping</h3>
+                <p>Tents, summer cabins, fire pit and simple amenities</p>
               </div>
             </article>
             <article class="about-section-card about-section-card-reverse">
               <img class="about-section-image" src="../assets/mroja-about-restoration.jpg" alt="">
               <div>
-                <h3>Восстановление хутора</h3>
-                <p>Можно приехать, помочь руками и стать частью возрождения места</p>
+                <h3>Reviving the homestead</h3>
+                <p>You can come, help with your hands and become part of this place's revival</p>
               </div>
             </article>
             <article class="about-section-card">
               <img class="about-section-image" src="../assets/mroja-about-forest.jpg" alt="">
               <div>
-                <h3>Лес и природа</h3>
-                <p>Хутор окружен лесом с 4-х сторон — березовым, сосновым и дубовым</p>
+                <h3>Forest and nature</h3>
+                <p>The homestead is surrounded by forest on all four sides - birch, pine and oak</p>
               </div>
             </article>
             <article class="about-section-card about-section-card-reverse">
               <img class="about-section-image" src="../assets/mroja-about-culture.jpg" alt="">
               <div>
-                <h3>Деревенский опыт</h3>
-                <p>Рубите дрова, разжигайте костер, соберите яйца и получайте награды</p>
+                <h3>Village experience</h3>
+                <p>Chop firewood, light a fire, collect eggs and earn rewards</p>
               </div>
             </article>
           </div>
@@ -137,38 +156,38 @@
         <img class="audience-section-ornament audience-section-ornament-right" src="../assets/ornament-rich.svg" alt="" aria-hidden="true">
         <div class="audience-section-inner">
           <div class="section-heading audience-section-heading">
-            <h2 id="audience-title">Кто выбирает MROJA</h2>
-            <p>Для тех, кто мечтает сбежать из города</p>
+            <h2 id="audience-title">Who chooses MROJA</h2>
+            <p>For those who dream of escaping the city</p>
           </div>
           <div class="audience-slider" data-audience-slider>
-            <button class="audience-arrow audience-arrow-prev" type="button" data-audience-prev aria-label="Предыдущая карточка аудитории">
+            <button class="audience-arrow audience-arrow-prev" type="button" data-audience-prev aria-label="Previous audience card">
               <img src="../assets/button-icon-arrows.png" alt="" aria-hidden="true">
             </button>
             <div class="audience-viewport">
               <div class="audience-track" data-audience-track>
                 <article class="audience-card">
                   <img src="../assets/audience-city.png" alt="">
-                  <h3>Городские жители</h3>
-                  <p>Если новости, работа и постоянное давление забрали силы — здесь можно выдохнуть и замедлиться</p>
+                  <h3>City people</h3>
+                  <p>If news, work and constant pressure drained you — here you can breathe and slow down</p>
                 </article>
                 <article class="audience-card">
                   <img src="../assets/audience-nature.png" alt="">
-                  <h3>Тянет в лес</h3>
-                  <p>Если вы мечтаете о жизни за городом, но не готовы всё бросить — попробуйте здесь</p>
+                  <h3>Drawn to the forest</h3>
+                  <p>If you dream of life outside the city but cannot leave everything behind — try it here</p>
                 </article>
                 <article class="audience-card">
                   <img src="../assets/audience-emigration.png" alt="">
-                  <h3>Беларусы в эмиграции</h3>
-                  <p>Если вам не хватает дома — здесь вас ждёт Беларусь, в которую можно приехать</p>
+                  <h3>Belarusians abroad</h3>
+                  <p>If you miss home — here is a Belarus you can actually come to</p>
                 </article>
                 <article class="audience-card">
                   <img src="../assets/audience-trauma.png" alt="">
-                  <h3>После сложного опыта</h3>
-                  <p>Если терапии недостаточно и нужно место, чтобы выдохнуть, природа и работа руками могут помочь</p>
+                  <h3>After hard times</h3>
+                  <p>If therapy is not enough and you need a place to breathe, nature and hands-on work can help</p>
                 </article>
               </div>
             </div>
-            <button class="audience-arrow audience-arrow-next" type="button" data-audience-next aria-label="Следующая карточка аудитории">
+            <button class="audience-arrow audience-arrow-next" type="button" data-audience-next aria-label="Next audience card">
               <img src="../assets/button-icon-arrows.png" alt="" aria-hidden="true">
             </button>
           </div>
@@ -177,68 +196,68 @@
       <section class="gallery-section" id="gallery" aria-labelledby="gallery-title">
         <div class="gallery-section-inner">
           <div class="section-heading gallery-section-heading">
-            <h2 id="gallery-title">Галерея</h2>
+            <h2 id="gallery-title">Gallery</h2>
           </div>
           <div class="gallery-grid" data-gallery>
-            <button class="gallery-item" type="button" data-gallery-item data-gallery-src="../assets/gallery/MROJA%201.jpg" aria-label="Открыть фото галереи 1"><img src="../assets/gallery/MROJA%201.jpg" alt="Фото MROJA 1" loading="eager" decoding="async"></button>
-            <button class="gallery-item" type="button" data-gallery-item data-gallery-src="../assets/gallery/MROJA%202.jpg" aria-label="Открыть фото галереи 2"><img src="../assets/gallery/MROJA%202.jpg" alt="Фото MROJA 2" loading="eager" decoding="async"></button>
-            <button class="gallery-item" type="button" data-gallery-item data-gallery-src="../assets/gallery/MROJA%203.jpg" aria-label="Открыть фото галереи 3"><img src="../assets/gallery/MROJA%203.jpg" alt="Фото MROJA 3" loading="eager" decoding="async"></button>
-            <button class="gallery-item" type="button" data-gallery-item data-gallery-src="../assets/gallery/MROJA%204.jpg" aria-label="Открыть фото галереи 4"><img src="../assets/gallery/MROJA%204.jpg" alt="Фото MROJA 4" loading="lazy" decoding="async"></button>
-            <button class="gallery-item" type="button" data-gallery-item data-gallery-src="../assets/gallery/MROJA%205.jpg" aria-label="Открыть фото галереи 5"><img src="../assets/gallery/MROJA%205.jpg" alt="Фото MROJA 5" loading="lazy" decoding="async"></button>
-            <button class="gallery-item" type="button" data-gallery-item data-gallery-src="../assets/gallery/MROJA%206.jpg" aria-label="Открыть фото галереи 6"><img src="../assets/gallery/MROJA%206.jpg" alt="Фото MROJA 6" loading="lazy" decoding="async"></button>
-            <button class="gallery-item" type="button" data-gallery-item data-gallery-src="../assets/gallery/MROJA%207.jpg" aria-label="Открыть фото галереи 7"><img src="../assets/gallery/MROJA%207.jpg" alt="Фото MROJA 7" loading="lazy" decoding="async"></button>
-            <button class="gallery-item" type="button" data-gallery-item data-gallery-src="../assets/gallery/MROJA%208.jpg" aria-label="Открыть фото галереи 8"><img src="../assets/gallery/MROJA%208.jpg" alt="Фото MROJA 8" loading="lazy" decoding="async"></button>
-            <button class="gallery-item" type="button" data-gallery-item data-gallery-src="../assets/gallery/MROJA%209.jpg" aria-label="Открыть фото галереи 9"><img src="../assets/gallery/MROJA%209.jpg" alt="Фото MROJA 9" loading="lazy" decoding="async"></button>
-            <button class="gallery-item" type="button" data-gallery-item data-gallery-src="../assets/gallery/MROJA%2010.jpg" aria-label="Открыть фото галереи 10"><img src="../assets/gallery/MROJA%2010.jpg" alt="Фото MROJA 10" loading="lazy" decoding="async"></button>
-            <button class="gallery-item" type="button" data-gallery-item data-gallery-src="../assets/gallery/MROJA%2011.jpg" aria-label="Открыть фото галереи 11"><img src="../assets/gallery/MROJA%2011.jpg" alt="Фото MROJA 11" loading="lazy" decoding="async"></button>
-            <button class="gallery-item" type="button" data-gallery-item data-gallery-src="../assets/gallery/MROJA%2012.jpg" aria-label="Открыть фото галереи 12"><img src="../assets/gallery/MROJA%2012.jpg" alt="Фото MROJA 12" loading="lazy" decoding="async"></button>
-            <button class="gallery-item" type="button" data-gallery-item data-gallery-src="../assets/gallery/MROJA%2013.jpg" aria-label="Открыть фото галереи 13"><img src="../assets/gallery/MROJA%2013.jpg" alt="Фото MROJA 13" loading="lazy" decoding="async"></button>
-            <button class="gallery-item" type="button" data-gallery-item data-gallery-src="../assets/gallery/MROJA%2014.jpg" aria-label="Открыть фото галереи 14"><img src="../assets/gallery/MROJA%2014.jpg" alt="Фото MROJA 14" loading="lazy" decoding="async"></button>
-            <button class="gallery-item" type="button" data-gallery-item data-gallery-src="../assets/gallery/MROJA%2015.jpg" aria-label="Открыть фото галереи 15"><img src="../assets/gallery/MROJA%2015.jpg" alt="Фото MROJA 15" loading="lazy" decoding="async"></button>
-            <button class="gallery-item" type="button" data-gallery-item data-gallery-src="../assets/gallery/MROJA%2016.jpg" aria-label="Открыть фото галереи 16"><img src="../assets/gallery/MROJA%2016.jpg" alt="Фото MROJA 16" loading="lazy" decoding="async"></button>
-            <button class="gallery-item" type="button" data-gallery-item data-gallery-src="../assets/gallery/MROJA%2017.jpg" aria-label="Открыть фото галереи 17"><img src="../assets/gallery/MROJA%2017.jpg" alt="Фото MROJA 17" loading="lazy" decoding="async"></button>
-            <button class="gallery-item" type="button" data-gallery-item data-gallery-src="../assets/gallery/MROJA%2018.jpg" aria-label="Открыть фото галереи 18"><img src="../assets/gallery/MROJA%2018.jpg" alt="Фото MROJA 18" loading="lazy" decoding="async"></button>
-            <button class="gallery-item" type="button" data-gallery-item data-gallery-src="../assets/gallery/MROJA%2019.jpg" aria-label="Открыть фото галереи 19"><img src="../assets/gallery/MROJA%2019.jpg" alt="Фото MROJA 19" loading="lazy" decoding="async"></button>
-            <button class="gallery-item" type="button" data-gallery-item data-gallery-src="../assets/gallery/MROJA%2020.jpg" aria-label="Открыть фото галереи 20"><img src="../assets/gallery/MROJA%2020.jpg" alt="Фото MROJA 20" loading="lazy" decoding="async"></button>
-            <button class="gallery-item" type="button" data-gallery-item data-gallery-src="../assets/gallery/MROJA%2021.jpg" aria-label="Открыть фото галереи 21"><img src="../assets/gallery/MROJA%2021.jpg" alt="Фото MROJA 21" loading="lazy" decoding="async"></button>
-            <button class="gallery-item" type="button" data-gallery-item data-gallery-src="../assets/gallery/MROJA%2022.jpg" aria-label="Открыть фото галереи 22"><img src="../assets/gallery/MROJA%2022.jpg" alt="Фото MROJA 22" loading="lazy" decoding="async"></button>
-            <button class="gallery-item" type="button" data-gallery-item data-gallery-src="../assets/gallery/MROJA%2023.jpg" aria-label="Открыть фото галереи 23"><img src="../assets/gallery/MROJA%2023.jpg" alt="Фото MROJA 23" loading="lazy" decoding="async"></button>
+            <button class="gallery-item" type="button" data-gallery-item data-gallery-src="../assets/gallery/MROJA%201.jpg" aria-label="Open gallery photo 1"><img src="../assets/gallery/MROJA%201.jpg" alt="MROJA gallery photo 1" loading="eager" decoding="async"></button>
+            <button class="gallery-item" type="button" data-gallery-item data-gallery-src="../assets/gallery/MROJA%202.jpg" aria-label="Open gallery photo 2"><img src="../assets/gallery/MROJA%202.jpg" alt="MROJA gallery photo 2" loading="eager" decoding="async"></button>
+            <button class="gallery-item" type="button" data-gallery-item data-gallery-src="../assets/gallery/MROJA%203.jpg" aria-label="Open gallery photo 3"><img src="../assets/gallery/MROJA%203.jpg" alt="MROJA gallery photo 3" loading="eager" decoding="async"></button>
+            <button class="gallery-item" type="button" data-gallery-item data-gallery-src="../assets/gallery/MROJA%204.jpg" aria-label="Open gallery photo 4"><img src="../assets/gallery/MROJA%204.jpg" alt="MROJA gallery photo 4" loading="lazy" decoding="async"></button>
+            <button class="gallery-item" type="button" data-gallery-item data-gallery-src="../assets/gallery/MROJA%205.jpg" aria-label="Open gallery photo 5"><img src="../assets/gallery/MROJA%205.jpg" alt="MROJA gallery photo 5" loading="lazy" decoding="async"></button>
+            <button class="gallery-item" type="button" data-gallery-item data-gallery-src="../assets/gallery/MROJA%206.jpg" aria-label="Open gallery photo 6"><img src="../assets/gallery/MROJA%206.jpg" alt="MROJA gallery photo 6" loading="lazy" decoding="async"></button>
+            <button class="gallery-item" type="button" data-gallery-item data-gallery-src="../assets/gallery/MROJA%207.jpg" aria-label="Open gallery photo 7"><img src="../assets/gallery/MROJA%207.jpg" alt="MROJA gallery photo 7" loading="lazy" decoding="async"></button>
+            <button class="gallery-item" type="button" data-gallery-item data-gallery-src="../assets/gallery/MROJA%208.jpg" aria-label="Open gallery photo 8"><img src="../assets/gallery/MROJA%208.jpg" alt="MROJA gallery photo 8" loading="lazy" decoding="async"></button>
+            <button class="gallery-item" type="button" data-gallery-item data-gallery-src="../assets/gallery/MROJA%209.jpg" aria-label="Open gallery photo 9"><img src="../assets/gallery/MROJA%209.jpg" alt="MROJA gallery photo 9" loading="lazy" decoding="async"></button>
+            <button class="gallery-item" type="button" data-gallery-item data-gallery-src="../assets/gallery/MROJA%2010.jpg" aria-label="Open gallery photo 10"><img src="../assets/gallery/MROJA%2010.jpg" alt="MROJA gallery photo 10" loading="lazy" decoding="async"></button>
+            <button class="gallery-item" type="button" data-gallery-item data-gallery-src="../assets/gallery/MROJA%2011.jpg" aria-label="Open gallery photo 11"><img src="../assets/gallery/MROJA%2011.jpg" alt="MROJA gallery photo 11" loading="lazy" decoding="async"></button>
+            <button class="gallery-item" type="button" data-gallery-item data-gallery-src="../assets/gallery/MROJA%2012.jpg" aria-label="Open gallery photo 12"><img src="../assets/gallery/MROJA%2012.jpg" alt="MROJA gallery photo 12" loading="lazy" decoding="async"></button>
+            <button class="gallery-item" type="button" data-gallery-item data-gallery-src="../assets/gallery/MROJA%2013.jpg" aria-label="Open gallery photo 13"><img src="../assets/gallery/MROJA%2013.jpg" alt="MROJA gallery photo 13" loading="lazy" decoding="async"></button>
+            <button class="gallery-item" type="button" data-gallery-item data-gallery-src="../assets/gallery/MROJA%2014.jpg" aria-label="Open gallery photo 14"><img src="../assets/gallery/MROJA%2014.jpg" alt="MROJA gallery photo 14" loading="lazy" decoding="async"></button>
+            <button class="gallery-item" type="button" data-gallery-item data-gallery-src="../assets/gallery/MROJA%2015.jpg" aria-label="Open gallery photo 15"><img src="../assets/gallery/MROJA%2015.jpg" alt="MROJA gallery photo 15" loading="lazy" decoding="async"></button>
+            <button class="gallery-item" type="button" data-gallery-item data-gallery-src="../assets/gallery/MROJA%2016.jpg" aria-label="Open gallery photo 16"><img src="../assets/gallery/MROJA%2016.jpg" alt="MROJA gallery photo 16" loading="lazy" decoding="async"></button>
+            <button class="gallery-item" type="button" data-gallery-item data-gallery-src="../assets/gallery/MROJA%2017.jpg" aria-label="Open gallery photo 17"><img src="../assets/gallery/MROJA%2017.jpg" alt="MROJA gallery photo 17" loading="lazy" decoding="async"></button>
+            <button class="gallery-item" type="button" data-gallery-item data-gallery-src="../assets/gallery/MROJA%2018.jpg" aria-label="Open gallery photo 18"><img src="../assets/gallery/MROJA%2018.jpg" alt="MROJA gallery photo 18" loading="lazy" decoding="async"></button>
+            <button class="gallery-item" type="button" data-gallery-item data-gallery-src="../assets/gallery/MROJA%2019.jpg" aria-label="Open gallery photo 19"><img src="../assets/gallery/MROJA%2019.jpg" alt="MROJA gallery photo 19" loading="lazy" decoding="async"></button>
+            <button class="gallery-item" type="button" data-gallery-item data-gallery-src="../assets/gallery/MROJA%2020.jpg" aria-label="Open gallery photo 20"><img src="../assets/gallery/MROJA%2020.jpg" alt="MROJA gallery photo 20" loading="lazy" decoding="async"></button>
+            <button class="gallery-item" type="button" data-gallery-item data-gallery-src="../assets/gallery/MROJA%2021.jpg" aria-label="Open gallery photo 21"><img src="../assets/gallery/MROJA%2021.jpg" alt="MROJA gallery photo 21" loading="lazy" decoding="async"></button>
+            <button class="gallery-item" type="button" data-gallery-item data-gallery-src="../assets/gallery/MROJA%2022.jpg" aria-label="Open gallery photo 22"><img src="../assets/gallery/MROJA%2022.jpg" alt="MROJA gallery photo 22" loading="lazy" decoding="async"></button>
+            <button class="gallery-item" type="button" data-gallery-item data-gallery-src="../assets/gallery/MROJA%2023.jpg" aria-label="Open gallery photo 23"><img src="../assets/gallery/MROJA%2023.jpg" alt="MROJA gallery photo 23" loading="lazy" decoding="async"></button>
           </div>
         </div>
       </section>
       <div class="gallery-lightbox" data-gallery-lightbox hidden>
-        <button class="gallery-lightbox-close" type="button" data-gallery-close aria-label="Закрыть галерею">×</button>
-        <button class="gallery-lightbox-arrow gallery-lightbox-prev" type="button" data-gallery-prev aria-label="Предыдущее фото">‹</button>
+        <button class="gallery-lightbox-close" type="button" data-gallery-close aria-label="Close gallery">×</button>
+        <button class="gallery-lightbox-arrow gallery-lightbox-prev" type="button" data-gallery-prev aria-label="Previous photo">‹</button>
         <img class="gallery-lightbox-image" data-gallery-image alt="">
-        <button class="gallery-lightbox-arrow gallery-lightbox-next" type="button" data-gallery-next aria-label="Следующее фото">›</button>
+        <button class="gallery-lightbox-arrow gallery-lightbox-next" type="button" data-gallery-next aria-label="Next photo">›</button>
       </div>
 
-      <section class="mission-section" id="mission" aria-labelledby="mission-title">
+            <section class="mission-section" id="mission" aria-labelledby="mission-title">
         <img class="mission-section-ornament" src="../assets/ornament-rich.svg" alt="" aria-hidden="true">
         <div class="mission-section-inner">
           <div class="section-heading mission-section-heading">
-            <h2 id="mission-title">Социальная миссия</h2>
+            <h2 id="mission-title">Social mission</h2>
           </div>
           <div class="mission-card">
-            <p class="mission-card-lead">Многие беларусы после тюрьмы, репрессий, войны и вынужденной эмиграции живут в состоянии тревоги, усталости и выгорания</p>
+            <p class="mission-card-lead">Many Belarusians who have lived through prison, repression, war or forced emigration are dealing with anxiety, exhaustion and burnout</p>
             <div class="mission-points">
               <article>
                 <img src="../assets/heart.png" alt="" aria-hidden="true">
-                <h3>Искали помощи, но состояние не изменилось</h3>
+                <h3>Sought help, but nothing changed</h3>
               </article>
               <article>
                 <img src="../assets/heart.png" alt="" aria-hidden="true">
-                <h3>Не готовы или не могут обратиться за поддержкой</h3>
+                <h3>Are not ready or able to ask for support</h3>
               </article>
               <article>
                 <img src="../assets/heart.png" alt="" aria-hidden="true">
-                <h3>Мечтают сбежать в лес и поработать руками</h3>
+                <h3>Dream of escaping to the forest and working with their hands</h3>
               </article>
             </div>
           </div>
         </div>
         <div class="mission-visual">
-          <p class="mission-accent">MROJA — место силы и восстановления для тех, кому это особенно нужно</p>
+          <p class="mission-accent">MROJA is a place of strength and recovery for those who need it most</p>
         </div>
       </section>
       <!-- SUPPORT SECTION: rebuild later -->
@@ -246,96 +265,96 @@
       <!-- CONTACTS SECTION: rebuild later -->
       <!-- FOOTER SECTION: rebuild later -->
 
-      <section class="section restoration" id="stages" aria-labelledby="restoration-title">
+            <section class="section restoration" id="stages" aria-labelledby="restoration-title">
         <div class="section-heading">
-          <h2 id="restoration-title">Этапы работ</h2>
+          <h2 id="restoration-title">Work stages</h2>
         </div>
-        <div class="carousel" data-carousel aria-label="Карусель этапов работ">
-          <button class="carousel-arrow carousel-arrow-prev" type="button" data-carousel-prev aria-label="Предыдущий этап">‹</button>
+        <div class="carousel" data-carousel aria-label="Work stages carousel">
+          <button class="carousel-arrow carousel-arrow-prev" type="button" data-carousel-prev aria-label="Previous stage">‹</button>
           <div class="carousel-stage">
             <div class="carousel-track" data-carousel-track>
             <article class="restoration-card" data-card>
-              <img src="../assets/stage-territory.jpg" alt="Подготовка участка">
+              <img src="../assets/stage-territory.jpg" alt="Site preparation">
               <div class="restoration-card-body">
-                <h3>Подготовка участка</h3>
-                <p>Расчистить территорию, убрать мусор, выровнять землю, засеять травой</p>
-                <div class="stage-card-meta" aria-label="Детали этапа">
-                  <span><strong>Сумма:</strong> 3500 eur</span>
-                  <span><strong>Собственные средства:</strong> 3500 eur</span>
-                  <span><strong>Статус:</strong> сделано</span>
+                <h3>Site preparation</h3>
+                <p>Clear the area, remove waste, level the ground and sow grass</p>
+                <div class="stage-card-meta" aria-label="Stage details">
+                  <span><strong>Amount:</strong> 3500 eur</span>
+                  <span><strong>Own funds:</strong> 3500 eur</span>
+                  <span><strong>Status:</strong> done</span>
                 </div>
               </div>
             </article>
             <article class="restoration-card" data-card>
-              <img src="../assets/stage-water.jpg" alt="Коммуникации">
+              <img src="../assets/stage-water.jpg" alt="Utilities">
               <div class="restoration-card-body">
-                <h3>Коммуникации</h3>
-                <p>Вода, канализация, электричество и базовые условия</p>
-                <div class="stage-card-meta" aria-label="Детали этапа">
-                  <span><strong>Сумма:</strong> 12000 eur</span>
-                  <span><strong>Собственные средства:</strong> 3000 eur</span>
-                  <span><strong>Статус:</strong> <em>открыт сбор</em></span>
+                <h3>Utilities</h3>
+                <p>Water, sewage, electricity and basic conditions</p>
+                <div class="stage-card-meta" aria-label="Stage details">
+                  <span><strong>Amount:</strong> 12000 eur</span>
+                  <span><strong>Own funds:</strong> 3000 eur</span>
+                  <span><strong>Status:</strong> <em>fundraising open</em></span>
                 </div>
               </div>
             </article>
             <article class="restoration-card" data-card>
-              <img src="../assets/stage-living.jpg" alt="Места для проживания">
+              <img src="../assets/stage-living.jpg" alt="Places to stay">
               <div class="restoration-card-body">
-                <h3>Места для проживания</h3>
-                <p>Палаточная зона, летние домики, баня и удобства для гостей и волонтёров</p>
-                <div class="stage-card-meta" aria-label="Детали этапа">
-                  <span><strong>Сумма:</strong> 35000 eur</span>
-                  <span><strong>Статус:</strong> в ожидании</span>
+                <h3>Places to stay</h3>
+                <p>Tent area, summer cabins and basic comfort for guests and volunteers</p>
+                <div class="stage-card-meta" aria-label="Stage details">
+                  <span><strong>Amount:</strong> 35000 eur</span>
+                  <span><strong>Status:</strong> planned</span>
                 </div>
               </div>
             </article>
             <article class="restoration-card" data-card>
-              <img src="../assets/stage-conservation.jpg" alt="Восстановление дома">
+              <img src="../assets/stage-conservation.jpg" alt="House restoration">
               <div class="restoration-card-body">
-                <h3>Восстановление дома</h3>
-                <p>Укрепить конструкцию, стены, крышу и внутреннее пространство</p>
-                <div class="stage-card-meta" aria-label="Детали этапа">
-                  <span><strong>Сумма:</strong> 30000 eur</span>
-                  <span><strong>Собственные средства:</strong> 3000 eur</span>
-                  <span><strong>Статус:</strong> в ожидании</span>
+                <h3>House restoration</h3>
+                <p>Strengthen the structure, walls, roof and interior space</p>
+                <div class="stage-card-meta" aria-label="Stage details">
+                  <span><strong>Amount:</strong> 30000 eur</span>
+                  <span><strong>Own funds:</strong> 3000 eur</span>
+                  <span><strong>Status:</strong> planned</span>
                 </div>
               </div>
             </article>
             <article class="restoration-card" data-card>
-              <img src="../assets/stage-comfort.jpg" alt="Хозблок">
+              <img src="../assets/stage-comfort.jpg" alt="Utility block">
               <div class="restoration-card-body">
-                <h3>Хозблок</h3>
-                <p>Отдельная постройка с душевыми, туалетами и хозяйственным блоком</p>
-                <div class="stage-card-meta" aria-label="Детали этапа">
-                  <span><strong>Сумма:</strong> 12000 eur</span>
-                  <span><strong>Собственные средства:</strong> 3000 eur</span>
-                  <span><strong>Статус:</strong> в ожидании</span>
+                <h3>Utility block</h3>
+                <p>Separate building with showers, toilets and storage space</p>
+                <div class="stage-card-meta" aria-label="Stage details">
+                  <span><strong>Amount:</strong> 12000 eur</span>
+                  <span><strong>Own funds:</strong> 3000 eur</span>
+                  <span><strong>Status:</strong> planned</span>
                 </div>
               </div>
             </article>
             <article class="restoration-card" data-card>
-              <img src="../assets/stage-development.jpg" alt="Дальнейшее развитие">
+              <img src="../assets/stage-development.jpg" alt="Further development">
               <div class="restoration-card-body">
-                <h3>Дальнейшее развитие</h3>
-                <p>Расширение инфраструктуры, ретриты, приложение с квестами</p>
-                <div class="stage-card-meta" aria-label="Детали этапа">
-                  <span><strong>Формат:</strong> 1 eur в месяц</span>
-                  <span><strong>Статус:</strong> <em>открыт сбор</em></span>
+                <h3>Further development</h3>
+                <p>Infrastructure, retreats, workshops and the quest app</p>
+                <div class="stage-card-meta" aria-label="Stage details">
+                  <span><strong>Format:</strong> 1 eur per month</span>
+                  <span><strong>Status:</strong> <em>fundraising open</em></span>
                 </div>
               </div>
             </article>
             </div>
           </div>
-          <button class="carousel-arrow carousel-arrow-next" type="button" data-carousel-next aria-label="Следующий этап">›</button>
+          <button class="carousel-arrow carousel-arrow-next" type="button" data-carousel-next aria-label="Next stage">›</button>
         </div>
         <div class="stage-support">
           <a class="stage-support-button stage-support-button-dark" href="https://zrzutka.pl/8hezg6" target="_blank" rel="noopener">
             <span class="stage-support-icon"><img src="../assets/Icon-heart-w.png" alt=""></span>
-            <span class="stage-support-text"><strong>Поддержать PLN</strong><small>Zrzutka / Польша</small></span>
+            <span class="stage-support-text"><strong>Support PLN</strong><small>Zrzutka / Poland</small></span>
           </a>
           <a class="stage-support-button stage-support-button-light" href="https://buymeacoffee.com/mroja" target="_blank" rel="noopener">
             <span class="stage-support-icon"><img src="../assets/Icon-heart-b.png" alt=""></span>
-            <span class="stage-support-text"><strong>Поддержать EUR</strong><small>Buy Me a Coffee / другие страны</small></span>
+            <span class="stage-support-text"><strong>Support EUR</strong><small>Buy Me a Coffee / other countries</small></span>
           </a>
         </div>
       </section>
@@ -395,24 +414,15 @@
       </section>
 
     </main>
-    <nav class="mobile-bottom-nav" aria-label="Мобильная навигация" data-mobile-bottom-nav>
-      <a href="#top" data-nav-target="top">
-        <span class="mobile-bottom-icon" style="--icon: url('../assets/mobmenu-Icon-home.svg')"></span>
-        <span>Домой</span>
+    <div class="mobile-fixed-support" aria-label="Support MROJA">
+      <a class="mobile-support-pill mobile-support-pill-primary" href="https://zrzutka.pl/2du5rd" target="_blank" rel="noopener">
+        <span>Поддержать PLN</span>
+        <small>Zrzutka / Польша</small>
       </a>
-      <a href="#team" data-nav-target="team">
-        <span class="mobile-bottom-icon" style="--icon: url('../assets/mobmenu-Icon-about.svg')"></span>
-        <span>О нас</span>
+      <a class="mobile-support-pill mobile-support-pill-light" href="https://buymeacoffee.com/mroja/membership" target="_blank" rel="noopener">
+        <span>Поддержать EN</span>
+        <small>Buy Me a Coffee / другие страны</small>
       </a>
-      <a href="#join" data-nav-target="join">
-        <span class="mobile-bottom-icon" style="--icon: url('../assets/mobmenu-Icon-support.svg')"></span>
-        <span>Поддержать</span>
-      </a>
-      <a href="#contacts" data-nav-target="contacts">
-        <span class="mobile-bottom-icon" style="--icon: url('../assets/mobmenu-Icon-contacts.svg')"></span>
-        <span>Контакты</span>
-      </a>
-      <a class="mobile-bottom-lang" href="../" data-lang-switch>EN</a>
-    </nav>
+    </div>
   </body>
 </html>
