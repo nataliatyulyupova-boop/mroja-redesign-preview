@@ -11,9 +11,16 @@
   const dictionaries = {
     en: {
       htmlLang: "en",
-      title: "MROJA Eco-Village",
+      title: "Restoring an Abandoned Homestead in the Forest — MROJA",
       description:
-        "MROJA is an eco-village in Podlasie: the revival of an abandoned old forest homestead, Belarusian culture, volunteering, and a place for people to recover strength.",
+        "MROJA is a forest homestead for those who dream of escaping the city: simple life, glamping, hands-on restoration, nature and living Belarusian culture.",
+      canonical: "https://mroja.me/",
+      ogTitle: "Restoring an Abandoned Homestead in the Forest — MROJA",
+      ogDescription:
+        "A forest homestead for those who dream of escaping the city: glamping, simple life, hands-on restoration, nature and living Belarusian culture.",
+      twitterTitle: "Restoring an Abandoned Homestead in the Forest — MROJA",
+      twitterDescription:
+        "A forest homestead for those who dream of escaping the city: simple life, glamping, hands-on restoration, nature and living Belarusian culture.",
       nav: ["What is MROJA", "Work stages", "Who we are", "Contacts", "Support the project"],
       heroTitle: "Reviving an abandoned<br>homestead in the forest",
       heroDesktop: [
@@ -106,9 +113,16 @@
     },
     ru: {
       htmlLang: "ru",
-      title: "MROJA Eco-Village",
+      title: "Восстанавливаем заброшенный хутор в лесу — MROJA",
       description:
-        "MROJA - экодеревня на Подляшье: возрождение заброшенного хутора в лесу, беларусская культура, волонтерство и место восстановления сил.",
+        "MROJA — место для тех, кто мечтает сбежать из города: глэмпинг, простая жизнь, восстановление хутора, природа и живая беларусская культура.",
+      canonical: "https://mroja.me/ru/",
+      ogTitle: "Восстанавливаем заброшенный хутор в лесу — MROJA",
+      ogDescription:
+        "Место для тех, кто мечтает сбежать из города: глэмпинг, простая жизнь, восстановление хутора, природа и живая беларусская культура.",
+      twitterTitle: "Восстанавливаем заброшенный хутор в лесу — MROJA",
+      twitterDescription:
+        "Место для тех, кто мечтает сбежать из города: глэмпинг, простая жизнь, восстановление хутора, природа и живая беларусская культура.",
       nav: ["Что такое MROJA", "Этапы работ", "Кто мы", "Контакты", "Поддержать проект"],
       heroTitle: "Восстанавливаем заброшенный<br>хутор в лесу",
       heroDesktop: [
@@ -171,9 +185,16 @@
     },
     by: {
       htmlLang: "be",
-      title: "MROJA Eco-Village",
+      title: "Адраджаем закінуты хутар у лесе — MROJA",
       description:
-        "MROJA - экавёска на Падляшшы: аднаўленне закінутага хутара ў лесе, беларуская культура, валанцёрства і месца аднаўлення сіл.",
+        "MROJA — месца для тых, хто марыць вырвацца з горада: глэмпінг, простае жыццё, адраджэнне хутара, прырода і жывая беларуская культура.",
+      canonical: "https://mroja.me/by/",
+      ogTitle: "Адраджаем закінуты хутар у лесе — MROJA",
+      ogDescription:
+        "Месца для тых, хто марыць вырвацца з горада: глэмпінг, простае жыццё, адраджэнне хутара, прырода і жывая беларуская культура.",
+      twitterTitle: "Адраджаем закінуты хутар у лесе — MROJA",
+      twitterDescription:
+        "Месца для тых, хто марыць вырвацца з горада: глэмпінг, простае жыццё, адраджэнне хутара, прырода і жывая беларуская культура.",
       nav: ["Што такое MROJA", "Этапы работ", "Хто мы", "Кантакты", "Падтрымаць праект"],
       heroTitle: "Аднаўляем закінуты<br>хутар у лесе",
       heroDesktop: ["Ствараем экавёску, дзе можна перазагрузіцца,", "адпачыць ад шуму і далучыцца да перараджэння гэтага месца"],
@@ -227,9 +248,16 @@
     },
     pl: {
       htmlLang: "pl",
-      title: "MROJA Eco-Village",
+      title: "Odnawiamy opuszczone siedlisko w lesie — MROJA",
       description:
-        "MROJA to ekowioska na Podlasiu: odrodzenie opuszczonego leśnego siedliska, kultura białoruska, wolontariat i miejsce odzyskiwania sił.",
+        "MROJA to miejsce dla tych, którzy marzą o ucieczce z miasta: glamping, proste życie, odnowa starego siedliska, natura i żywa białoruska kultura.",
+      canonical: "https://mroja.me/pl/",
+      ogTitle: "Odnawiamy opuszczone siedlisko w lesie — MROJA",
+      ogDescription:
+        "Miejsce dla tych, którzy marzą o ucieczce z miasta: glamping, proste życie, odnowa starego siedliska, natura i żywa białoruska kultura.",
+      twitterTitle: "Odnawiamy opuszczone siedlisko w lesie — MROJA",
+      twitterDescription:
+        "Miejsce dla tych, którzy marzą o ucieczce z miasta: glamping, proste życie, odnowa starego siedliska, natura i żywa białoruska kultura.",
       nav: ["Czym jest MROJA", "Etapy prac", "Kim jesteśmy", "Kontakt", "Wesprzyj projekt"],
       heroTitle: "Odnawiamy opuszczone<br>siedlisko w lesie",
       heroDesktop: ["Tworzymy ekowioskę, w której można się zresetować,", "odpocząć od hałasu i dołączyć do odrodzenia tego miejsca"],
@@ -305,8 +333,21 @@
   function applyTranslations() {
     document.documentElement.lang = dict.htmlLang;
     document.title = dict.title;
+    const ogTitle = dict.ogTitle || dict.title;
+    const ogDescription = dict.ogDescription || dict.description;
+    const twitterTitle = dict.twitterTitle || ogTitle;
+    const twitterDescription = dict.twitterDescription || ogDescription;
+
     document.querySelector('meta[name="description"]')?.setAttribute("content", dict.description);
-    document.querySelector('meta[property="og:description"]')?.setAttribute("content", dict.description);
+    document.querySelector('link[rel="canonical"]')?.setAttribute("href", dict.canonical);
+    document.querySelector('meta[property="og:title"]')?.setAttribute("content", ogTitle);
+    document.querySelector('meta[property="og:description"]')?.setAttribute("content", ogDescription);
+    document.querySelector('meta[property="og:url"]')?.setAttribute("content", dict.canonical);
+    document.querySelector('meta[property="og:image"]')?.setAttribute("content", "https://mroja.me/assets/og-mroja.jpg");
+    document.querySelector('meta[name="twitter:card"]')?.setAttribute("content", "summary_large_image");
+    document.querySelector('meta[name="twitter:title"]')?.setAttribute("content", twitterTitle);
+    document.querySelector('meta[name="twitter:description"]')?.setAttribute("content", twitterDescription);
+    document.querySelector('meta[name="twitter:image"]')?.setAttribute("content", "https://mroja.me/assets/og-mroja.jpg");
 
     setText(".mobile-header-button", dict.nav[4]);
     setText(".header-button", dict.nav[4]);
