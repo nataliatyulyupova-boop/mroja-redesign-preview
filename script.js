@@ -586,7 +586,7 @@ function initGallery() {
   let touchStartX = 0;
 
   function visibleInitialCount() {
-    return mobileQuery.matches ? 4 : 8;
+    return mobileQuery.matches ? 3 : 4;
   }
 
   function reveal(count) {
@@ -603,15 +603,32 @@ function initGallery() {
   }
 
   function revealNextBatch() {
-    reveal(shownCount + (mobileQuery.matches ? 4 : 6));
+    reveal(shownCount + (mobileQuery.matches ? 3 : 4));
   }
 
-  function setImage(index) {
+  function setImage(index, direction = 0) {
     activeIndex = (index + items.length) % items.length;
     const item = items[activeIndex];
     const source = item.dataset.gallerySrc || item.querySelector("img")?.src || "";
-    image.src = source;
-    image.alt = item.querySelector("img")?.alt || "";
+    const alt = item.querySelector("img")?.alt || "";
+
+    if (!direction || !image.src) {
+      image.src = source;
+      image.alt = alt;
+      return;
+    }
+
+    image.classList.remove("is-slide-in-left", "is-slide-in-right", "is-slide-out-left", "is-slide-out-right");
+    image.classList.add(direction > 0 ? "is-slide-out-left" : "is-slide-out-right");
+    window.setTimeout(() => {
+      image.src = source;
+      image.alt = alt;
+      image.classList.remove("is-slide-out-left", "is-slide-out-right");
+      image.classList.add(direction > 0 ? "is-slide-in-right" : "is-slide-in-left");
+      requestAnimationFrame(() => {
+        image.classList.remove("is-slide-in-left", "is-slide-in-right");
+      });
+    }, 170);
   }
 
   function open(index) {
@@ -631,8 +648,8 @@ function initGallery() {
   });
 
   closeButton?.addEventListener("click", close);
-  prevButton?.addEventListener("click", () => setImage(activeIndex - 1));
-  nextButton?.addEventListener("click", () => setImage(activeIndex + 1));
+  prevButton?.addEventListener("click", () => setImage(activeIndex - 1, -1));
+  nextButton?.addEventListener("click", () => setImage(activeIndex + 1, 1));
 
   lightbox.addEventListener("click", (event) => {
     if (event.target === lightbox) close();
@@ -641,8 +658,8 @@ function initGallery() {
   document.addEventListener("keydown", (event) => {
     if (lightbox.hidden) return;
     if (event.key === "Escape") close();
-    if (event.key === "ArrowLeft") setImage(activeIndex - 1);
-    if (event.key === "ArrowRight") setImage(activeIndex + 1);
+    if (event.key === "ArrowLeft") setImage(activeIndex - 1, -1);
+    if (event.key === "ArrowRight") setImage(activeIndex + 1, 1);
   });
 
   lightbox.addEventListener("touchstart", (event) => {
@@ -653,7 +670,7 @@ function initGallery() {
     const touchEndX = event.changedTouches[0]?.clientX || 0;
     const delta = touchEndX - touchStartX;
     if (Math.abs(delta) > 44) {
-      setImage(activeIndex + (delta < 0 ? 1 : -1));
+      setImage(activeIndex + (delta < 0 ? 1 : -1), delta < 0 ? 1 : -1);
     }
   }, { passive: true });
 
@@ -663,7 +680,7 @@ function initGallery() {
     const gallery = items[0]?.closest("[data-gallery]");
     if (!gallery || shownCount >= items.length) return;
     const rect = gallery.getBoundingClientRect();
-    if (rect.bottom < window.innerHeight + 420) revealNextBatch();
+    if (rect.bottom < window.innerHeight + 180) revealNextBatch();
   }
 
   window.addEventListener("scroll", maybeRevealOnScroll, { passive: true });
@@ -676,6 +693,29 @@ function initGallery() {
   });
 }
 
+function initMobileGlassHeader() {
+  const header = document.querySelector(".mobile-glass-header");
+  const hero = document.querySelector(".hero");
+  if (!header || !hero) return;
+
+  const mobileQuery = window.matchMedia("(max-width: 720px)");
+
+  function sync() {
+    if (!mobileQuery.matches) {
+      header.classList.remove("is-visible");
+      return;
+    }
+
+    const heroBottom = hero.getBoundingClientRect().bottom;
+    header.classList.toggle("is-visible", heroBottom < window.innerHeight * 0.28);
+  }
+
+  window.addEventListener("scroll", sync, { passive: true });
+  window.addEventListener("resize", sync);
+  mobileQuery.addEventListener?.("change", sync);
+  sync();
+}
+
 initTabs();
 initCarousel();
 initAudienceSlider();
@@ -685,4 +725,5 @@ initMobileMenu();
 initSmoothAnchors();
 initMobileBottomNav();
 initGallery();
+initMobileGlassHeader();
 // Native muted autoplay is handled by the video element; avoid extra play() calls on iOS.
