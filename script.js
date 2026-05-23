@@ -591,10 +591,19 @@ function initGallery() {
     stage.appendChild(image);
   }
 
+  let track = stage.querySelector(".gallery-slider-track");
+  if (!track) {
+    track = document.createElement("div");
+    track.className = "gallery-slider-track";
+    stage.appendChild(track);
+  }
+
   const mobileQuery = window.matchMedia("(max-width: 720px)");
   let activeIndex = 0;
   let shownCount = 0;
   let touchStartX = 0;
+  let touchDeltaX = 0;
+  let isDragging = false;
   let isSliding = false;
 
   function visibleInitialCount() {
@@ -625,58 +634,87 @@ function initGallery() {
     return { alt, source };
   }
 
+  function normalizeIndex(index) {
+    return (index + items.length) % items.length;
+  }
+
+  function buildSlide(index) {
+    const { alt, source } = getGalleryData(normalizeIndex(index));
+    const slide = document.createElement("div");
+    const slideImage = document.createElement("img");
+    slide.className = "gallery-slider-slide";
+    slideImage.className = "gallery-lightbox-image";
+    slideImage.src = source;
+    slideImage.alt = alt;
+    slide.appendChild(slideImage);
+    return slide;
+  }
+
+  function resetTrack(index = activeIndex) {
+    activeIndex = normalizeIndex(index);
+    track.classList.remove("is-dragging");
+    track.style.transition = "none";
+    track.style.transform = "translateX(0)";
+    track.replaceChildren(buildSlide(activeIndex));
+    image = track.querySelector(".gallery-lightbox-image") || image;
+    requestAnimationFrame(() => {
+      track.style.transition = "";
+    });
+  }
+
+  function finishSlide(nextIndex) {
+    activeIndex = normalizeIndex(nextIndex);
+    isSliding = false;
+    isDragging = false;
+    resetTrack(activeIndex);
+  }
+
   function setImage(index, direction = 0) {
     if (isSliding) return;
 
-    const nextIndex = (index + items.length) % items.length;
-    const { alt, source } = getGalleryData(nextIndex);
+    const nextIndex = normalizeIndex(index);
 
-    if (!direction || !image.src) {
-      activeIndex = nextIndex;
-      image.src = source;
-      image.alt = alt;
-      image.className = "gallery-lightbox-image is-active";
+    if (!direction || !track.children.length) {
+      resetTrack(nextIndex);
       return;
     }
 
     isSliding = true;
-    activeIndex = nextIndex;
+    track.classList.remove("is-dragging");
+    track.style.transition = "none";
+    track.replaceChildren();
 
-    const outgoing = image;
-    const incoming = outgoing.cloneNode(false);
-    incoming.src = source;
-    incoming.alt = alt;
-    incoming.className = `gallery-lightbox-image is-active ${direction > 0 ? "is-slide-enter-right" : "is-slide-enter-left"}`;
-    stage.appendChild(incoming);
+    if (direction > 0) {
+      track.append(buildSlide(activeIndex), buildSlide(nextIndex));
+      track.style.transform = "translateX(0)";
+    } else {
+      track.append(buildSlide(nextIndex), buildSlide(activeIndex));
+      track.style.transform = "translateX(-100%)";
+    }
 
     requestAnimationFrame(() => {
-      outgoing.classList.remove("is-active");
-      outgoing.classList.add(direction > 0 ? "is-slide-exit-left" : "is-slide-exit-right");
-      incoming.classList.remove(direction > 0 ? "is-slide-enter-right" : "is-slide-enter-left");
+      track.style.transition = "";
+      track.style.transform = direction > 0 ? "translateX(-100%)" : "translateX(0)";
     });
 
+    const finish = () => finishSlide(nextIndex);
+    track.addEventListener("transitionend", finish, { once: true });
     window.setTimeout(() => {
-      outgoing.remove();
-      image = incoming;
-      image.className = "gallery-lightbox-image is-active";
-      isSliding = false;
-    }, 460);
+      if (isSliding) finish();
+    }, 560);
   }
 
   function open(index) {
-    setImage(index);
+    resetTrack(index);
     lightbox.hidden = false;
     document.body.classList.add("gallery-lightbox-open");
   }
 
   function close() {
     lightbox.hidden = true;
-    stage.querySelectorAll(".gallery-lightbox-image").forEach((img, index) => {
-      if (index > 0) img.remove();
-    });
-    image = stage.querySelector(".gallery-lightbox-image") || image;
-    image.removeAttribute("src");
-    image.className = "gallery-lightbox-image";
+    track.replaceChildren();
+    isSliding = false;
+    isDragging = false;
     document.body.classList.remove("gallery-lightbox-open");
   }
 
@@ -700,14 +738,51 @@ function initGallery() {
   });
 
   stage.addEventListener("touchstart", (event) => {
+    if (isSliding || lightbox.hidden) return;
     touchStartX = event.changedTouches[0]?.clientX || 0;
+    touchDeltaX = 0;
+    isDragging = true;
+    track.classList.add("is-dragging");
+    track.style.transition = "none";
+    track.replaceChildren(buildSlide(activeIndex - 1), buildSlide(activeIndex), buildSlide(activeIndex + 1));
+    track.style.transform = "translateX(-100%)";
   }, { passive: true });
 
+  stage.addEventListener("touchmove", (event) => {
+    if (!isDragging) return;
+    touchDeltaX = (event.changedTouches[0]?.clientX || 0) - touchStartX;
+    track.style.transform = `translateX(calc(-100% + ${touchDeltaX}px))`;
+    event.preventDefault();
+  }, { passive: false });
+
   stage.addEventListener("touchend", (event) => {
+    if (!isDragging) return;
     const touchEndX = event.changedTouches[0]?.clientX || 0;
     const delta = touchEndX - touchStartX;
+    const direction = delta < 0 ? 1 : -1;
+    const nextIndex = normalizeIndex(activeIndex + direction);
+    isDragging = false;
+    isSliding = true;
+    track.classList.remove("is-dragging");
+    track.style.transition = "";
+
     if (Math.abs(delta) > 44) {
-      setImage(activeIndex + (delta < 0 ? 1 : -1), delta < 0 ? 1 : -1);
+      track.style.transform = direction > 0 ? "translateX(-200%)" : "translateX(0)";
+      const finish = () => finishSlide(nextIndex);
+      track.addEventListener("transitionend", finish, { once: true });
+      window.setTimeout(() => {
+        if (isSliding) finish();
+      }, 560);
+    } else {
+      track.style.transform = "translateX(-100%)";
+      const finish = () => {
+        isSliding = false;
+        resetTrack(activeIndex);
+      };
+      track.addEventListener("transitionend", finish, { once: true });
+      window.setTimeout(() => {
+        if (isSliding) finish();
+      }, 560);
     }
   }, { passive: true });
 
