@@ -31,7 +31,7 @@
       heroJoin: "Join us",
       heroLearn: "Learn more",
       aboutTitle: "What is MROJA",
-      aboutSubtitle: "A place of strength and transformation through simple actions",
+      aboutSubtitle: "Belarus you can actually come to",
       aboutCards: [
         ["Glamping", "Tents, summer cabins, fire pit and simple amenities"],
         ["Reviving the homestead", "You can come, help with your hands and become part of this place's revival"],
@@ -133,7 +133,7 @@
       heroJoin: "Присоединиться",
       heroLearn: "Узнать подробнее",
       aboutTitle: "Что такое MROJA",
-      aboutSubtitle: "Место силы и трансформации через простые действия",
+      aboutSubtitle: "Беларусь, в которую можно приехать",
       aboutCards: [
         ["Глэмпинг", "Палатки, летние домики, костер и простые удобства"],
         ["Восстановление хутора", "Можно приехать, помочь руками и стать частью возрождения места"],
@@ -202,7 +202,7 @@
       heroJoin: "Далучыцца",
       heroLearn: "Даведацца больш",
       aboutTitle: "Што такое MROJA",
-      aboutSubtitle: "Месца сілы і трансфармацыі праз простыя дзеянні",
+      aboutSubtitle: "Беларусь, у якую можна прыехаць",
       aboutCards: [
         ["Глэмпінг", "Палаткі, летнія домікі, вогнішча і простыя выгоды"],
         ["Аднаўленне хутара", "Можна прыехаць, дапамагчы рукамі і стаць часткай адраджэння месца"],
@@ -265,7 +265,7 @@
       heroJoin: "Dołącz",
       heroLearn: "Dowiedz się więcej",
       aboutTitle: "Czym jest MROJA",
-      aboutSubtitle: "Miejsce siły i transformacji przez proste działania",
+      aboutSubtitle: "Białoruś, do której można przyjechać",
       aboutCards: [
         ["Glamping", "Namioty, letnie domki, ognisko i proste udogodnienia"],
         ["Odnowa siedliska", "Możesz przyjechać, pomóc własnymi rękami i stać się częścią odrodzenia tego miejsca"],
